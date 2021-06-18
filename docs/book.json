@@ -1,5 +1,5 @@
 {
-    "title": "面试宝典",
+    "title": "面试知识分享",
     "description": "面试常见问题等",
     "language": "zh-hans",
     "author": "dunn",
@@ -33,16 +33,16 @@
         "tbfed-pagefooter": {
             "copyright": "2021",
             "modify_label": "该文件修订时间：",
-            "modify_format": "YYYY-MM-DD HH:mm:ss"
+            "modify_format": "YYYY-MM-DD"
         },
 		"sharing": {
 		   "douban": false,
 		   "facebook": false,
-		   "google": true,
+		   "google": false,
 		   "hatenaBookmark": false,
 		   "instapaper": false,
-		   "line": true,
-		   "linkedin": true,
+		   "line": false,
+		   "linkedin": false,
 		   "messenger": false,
 		   "pocket": false,
 		   "qq": true,
