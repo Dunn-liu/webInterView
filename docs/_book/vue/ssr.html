@@ -1,0 +1,2378 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>服务端渲染SSR · 面试宝典</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="dunn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="new_vue.html" />
+    
+    
+    <link rel="prev" href="spa.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../es6/array.html">
+            
+                <a href="../es6/array.html">
+            
+                    
+                    数组新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../es6/function.html">
+            
+                <a href="../es6/function.html">
+            
+                    
+                    函数新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../es6/object.html">
+            
+                <a href="../es6/object.html">
+            
+                    
+                    对象新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../es6/decorator.html">
+            
+                <a href="../es6/decorator.html">
+            
+                    
+                    ES6中装饰器 Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../es6/generator.html">
+            
+                <a href="../es6/generator.html">
+            
+                    
+                    ES6中Generator函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../es6/module.html">
+            
+                <a href="../es6/module.html">
+            
+                    
+                    ES6中Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../es6/promise.html">
+            
+                <a href="../es6/promise.html">
+            
+                    
+                    ES6中的promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../es6/proxy.html">
+            
+                <a href="../es6/proxy.html">
+            
+                    
+                    ES6中的Proxy与使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../es6/set_map.html">
+            
+                <a href="../es6/set_map.html">
+            
+                    
+                    ES6新增Set、Map两种数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../es6/var_let_const.html">
+            
+                <a href="../es6/var_let_const.html">
+            
+                    
+                    var、let、const之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===JavaScript===</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../JavaScript/== _===.html">
+            
+                <a href="../JavaScript/== _===.html">
+            
+                    
+                    == 和 ===区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../JavaScript/BOM.html">
+            
+                <a href="../JavaScript/BOM.html">
+            
+                    
+                    BOM理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../JavaScript/Dom.html">
+            
+                <a href="../JavaScript/Dom.html">
+            
+                    
+                    Dom理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../JavaScript/ajax.html">
+            
+                <a href="../JavaScript/ajax.html">
+            
+                    
+                    Ajax原理与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../JavaScript/array_api.html">
+            
+                <a href="../JavaScript/array_api.html">
+            
+                    
+                    数组常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../JavaScript/bind_call_apply.html">
+            
+                <a href="../JavaScript/bind_call_apply.html">
+            
+                    
+                    Bind Call Apply 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../JavaScript/cache.html">
+            
+                <a href="../JavaScript/cache.html">
+            
+                    
+                    Javascript本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../JavaScript/closure.html">
+            
+                <a href="../JavaScript/closure.html">
+            
+                    
+                    闭包的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../JavaScript/context_stack.html">
+            
+                <a href="../JavaScript/context_stack.html">
+            
+                    
+                    执行上下文和执行栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../JavaScript/continue_to_upload.html">
+            
+                <a href="../JavaScript/continue_to_upload.html">
+            
+                    
+                    大文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../JavaScript/copy.html">
+            
+                <a href="../JavaScript/copy.html">
+            
+                    
+                    深拷贝浅拷贝的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../JavaScript/data_type.html">
+            
+                <a href="../JavaScript/data_type.html">
+            
+                    
+                    js数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../JavaScript/debounce_throttle.html">
+            
+                <a href="../JavaScript/debounce_throttle.html">
+            
+                    
+                    函数的防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../JavaScript/event_Model.html">
+            
+                <a href="../JavaScript/event_Model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../JavaScript/event_agent.html">
+            
+                <a href="../JavaScript/event_agent.html">
+            
+                    
+                    事件代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../JavaScript/event_loop.html">
+            
+                <a href="../JavaScript/event_loop.html">
+            
+                    
+                    事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../JavaScript/function_cache.html">
+            
+                <a href="../JavaScript/function_cache.html">
+            
+                    
+                    函数缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../JavaScript/functional_programming.html">
+            
+                <a href="../JavaScript/functional_programming.html">
+            
+                    
+                    函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../JavaScript/inherit.html">
+            
+                <a href="../JavaScript/inherit.html">
+            
+                    
+                    js继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../JavaScript/loss_accuracy.html">
+            
+                <a href="../JavaScript/loss_accuracy.html">
+            
+                    
+                    Javascript 数字精度丢失
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../JavaScript/memory_leak.html">
+            
+                <a href="../JavaScript/memory_leak.html">
+            
+                    
+                    js内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../JavaScript/new.html">
+            
+                <a href="../JavaScript/new.html">
+            
+                    
+                    new操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../JavaScript/prototype.html">
+            
+                <a href="../JavaScript/prototype.html">
+            
+                    
+                    原型和原型链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                <a href="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                    
+                    如何实现上拉加载，下拉刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../JavaScript/regexp.html">
+            
+                <a href="../JavaScript/regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../JavaScript/scope.html">
+            
+                <a href="../JavaScript/scope.html">
+            
+                    
+                    作用域链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../JavaScript/security.html">
+            
+                <a href="../JavaScript/security.html">
+            
+                    
+                    web常见的攻击方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../JavaScript/single_sign.html">
+            
+                <a href="../JavaScript/single_sign.html">
+            
+                    
+                    实现单点登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../JavaScript/string_api.html">
+            
+                <a href="../JavaScript/string_api.html">
+            
+                    
+                    字符串的常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../JavaScript/tail_recursion.html">
+            
+                <a href="../JavaScript/tail_recursion.html">
+            
+                    
+                    对尾递归的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../JavaScript/this.html">
+            
+                <a href="../JavaScript/this.html">
+            
+                    
+                    this对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../JavaScript/type_conversion.html">
+            
+                <a href="../JavaScript/type_conversion.html">
+            
+                    
+                    JavaScript 中的类型转换机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../JavaScript/typeof_instanceof.html">
+            
+                <a href="../JavaScript/typeof_instanceof.html">
+            
+                    
+                    typeof 与 instanceof 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../JavaScript/visible.html">
+            
+                <a href="../JavaScript/visible.html">
+            
+                    
+                    元素是否在可视区域中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===CSS===</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../css/BFC.html">
+            
+                <a href="../css/BFC.html">
+            
+                    
+                    对BFC的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../css/animation.html">
+            
+                <a href="../css/animation.html">
+            
+                    
+                    css3动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../css/box.html">
+            
+                <a href="../css/box.html">
+            
+                    
+                    对盒子模型的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../css/center.html">
+            
+                <a href="../css/center.html">
+            
+                    
+                    元素水平垂直居中的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../css/column_layout.html">
+            
+                <a href="../css/column_layout.html">
+            
+                    
+                    实现两栏,三栏布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../css/css3_features.html">
+            
+                <a href="../css/css3_features.html">
+            
+                    
+                    CSS3新增特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../css/css_performance.html">
+            
+                <a href="../css/css_performance.html">
+            
+                    
+                    CSS提高性能的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../css/dp_px_dpr_ppi.html">
+            
+                <a href="../css/dp_px_dpr_ppi.html">
+            
+                    
+                    设备像素、css像素、设备独立像素、dpr、ppi 之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../css/em_px_rem_vh_vw.html">
+            
+                <a href="../css/em_px_rem_vh_vw.html">
+            
+                    
+                    em/px/rem/vh/vw区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../css/flexbox.html">
+            
+                <a href="../css/flexbox.html">
+            
+                    
+                    弹性盒布局模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../css/grid.html">
+            
+                <a href="../css/grid.html">
+            
+                    
+                    grid网格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../css/hide_attributes.html">
+            
+                <a href="../css/hide_attributes.html">
+            
+                    
+                    css隐藏页面元素方式,区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../css/layout_painting.html">
+            
+                <a href="../css/layout_painting.html">
+            
+                    
+                    回流跟重绘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../css/less_12px.html">
+            
+                <a href="../css/less_12px.html">
+            
+                    
+                    让Chrome支持小于12px 的文字方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../css/responsive_layout.html">
+            
+                <a href="../css/responsive_layout.html">
+            
+                    
+                    响应式设计的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../css/sass_less_stylus.html">
+            
+                <a href="../css/sass_less_stylus.html">
+            
+                    
+                    Css预编语言的理解与区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../css/selector.html">
+            
+                <a href="../css/selector.html">
+            
+                    
+                    css选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../css/single_multi_line.html">
+            
+                <a href="../css/single_multi_line.html">
+            
+                    
+                    实现单行／多行文本溢出省略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../css/triangle.html">
+            
+                <a href="../css/triangle.html">
+            
+                    
+                    CSS如何画一个三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../css/visual_scrolling.html">
+            
+                <a href="../css/visual_scrolling.html">
+            
+                    
+                    使用css完成视差滚动效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===HTTP===</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../http/1.0_1.1_2.0.html">
+            
+                <a href="../http/1.0_1.1_2.0.html">
+            
+                    
+                    HTTP1.0/1.1/2.0 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../http/CDN.html">
+            
+                <a href="../http/CDN.html">
+            
+                    
+                    如何理解CDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../http/DNS.html">
+            
+                <a href="../http/DNS.html">
+            
+                    
+                    DNS 完整的查询过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../http/GET_POST.html">
+            
+                <a href="../http/GET_POST.html">
+            
+                    
+                    GET和POST区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../http/HTTPS.html">
+            
+                <a href="../http/HTTPS.html">
+            
+                    
+                    HTTPS是如何保证安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../http/HTTP_HTTPS.html">
+            
+                <a href="../http/HTTP_HTTPS.html">
+            
+                    
+                    HTTP 和 HTTPS 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../http/OSI.html">
+            
+                <a href="../http/OSI.html">
+            
+                    
+                    理解OSI七层模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../http/TCP_IP.html">
+            
+                <a href="../http/TCP_IP.html">
+            
+                    
+                    理解TCP/IP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../http/UDP_TCP.html">
+            
+                <a href="../http/UDP_TCP.html">
+            
+                    
+                    UDP 和 TCP的区别和应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../http/WebSocket.html">
+            
+                <a href="../http/WebSocket.html">
+            
+                    
+                    对WebSocket的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../http/after_url.html">
+            
+                <a href="../http/after_url.html">
+            
+                    
+                    地址栏输入 URL 敲下回车后发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../http/handshakes_waves.html">
+            
+                <a href="../http/handshakes_waves.html">
+            
+                    
+                    TCP为什么需要三次握手和四次挥手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../http/headers.html">
+            
+                <a href="../http/headers.html">
+            
+                    
+                    TTP 常见的请求头有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../http/status.html">
+            
+                <a href="../http/status.html">
+            
+                    
+                    HTTP 常见的状态码有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===NodeJS===</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../nodeJS/fs.html">
+            
+                <a href="../nodeJS/fs.html">
+            
+                    
+                    Node 中的 fs模块的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../nodeJS/global.html">
+            
+                <a href="../nodeJS/global.html">
+            
+                    
+                    Node. js 有哪些全局对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../nodeJS/nodejs.html">
+            
+                <a href="../nodeJS/nodejs.html">
+            
+                    
+                    Node.js 的理解？优缺点？应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../nodeJS/process.html">
+            
+                <a href="../nodeJS/process.html">
+            
+                    
+                    Node 中的 process 的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue===</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="vue.html">
+            
+                <a href="vue.html">
+            
+                    
+                    对Vue的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="vue3_vue2.html">
+            
+                <a href="vue3_vue2.html">
+            
+                    
+                    Vue2和vue3的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="vnode.html">
+            
+                <a href="vnode.html">
+            
+                    
+                    什么是虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="bind.html">
+            
+                <a href="bind.html">
+            
+                    
+                    Vue2双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="communication.html">
+            
+                <a href="communication.html">
+            
+                    
+                    Vue组件之间的通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="components_plugin.html">
+            
+                <a href="components_plugin.html">
+            
+                    
+                    Vue中组件和插件有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    为什么data属性是一个函数而不是一个对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="data_object_add_attrs.html">
+            
+                <a href="data_object_add_attrs.html">
+            
+                    
+                    动态给vue的data添加一个新的属性时会发生什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="diff.html">
+            
+                <a href="diff.html">
+            
+                    
+                    Vue的diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    Vue自定义指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="keepalive.html">
+            
+                <a href="keepalive.html">
+            
+                    
+                    Vue中keep-alive的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="mixin.html">
+            
+                <a href="mixin.html">
+            
+                    
+                    Vue中mixin的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="spa.html">
+            
+                <a href="spa.html">
+            
+                    
+                    SPA单页面的理解以及它的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.14" data-path="ssr.html">
+            
+                <a href="ssr.html">
+            
+                    
+                    服务端渲染SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="new_vue.html">
+            
+                <a href="new_vue.html">
+            
+                    
+                    Vue实例挂载的过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="modifier.html">
+            
+                <a href="modifier.html">
+            
+                    
+                    Vue常用的修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="axios.html">
+            
+                <a href="axios.html">
+            
+                    
+                    Vue项目中对axios的封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="axiosCode.html">
+            
+                <a href="axiosCode.html">
+            
+                    
+                    对axios的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="slot.html">
+            
+                <a href="slot.html">
+            
+                    
+                    Vue中slot的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="show_if.html">
+            
+                <a href="show_if.html">
+            
+                    
+                    v-show和v-if有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="if_for.html">
+            
+                <a href="if_for.html">
+            
+                    
+                    v-if和v-for的优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="key.html">
+            
+                <a href="key.html">
+            
+                    
+                    Vue中key的原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="first_page_time.html">
+            
+                <a href="first_page_time.html">
+            
+                    
+                    如何解决SPA首屏加载速度慢
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    Vue中observable的了解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="nexttick.html">
+            
+                <a href="nexttick.html">
+            
+                    
+                    Vue中的$nextTick作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="lifecycle.html">
+            
+                <a href="lifecycle.html">
+            
+                    
+                    Vue生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    Vue项目的目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="permission.html">
+            
+                <a href="permission.html">
+            
+                    
+                    Vue项目中的权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="404.html">
+            
+                <a href="404.html">
+            
+                    
+                    Vue项目本地开发完成后部署到服务器后报404
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="cors.html">
+            
+                <a href="cors.html">
+            
+                    
+                    Vue项目如何解决跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="error.html">
+            
+                <a href="error.html">
+            
+                    
+                    怎么处理vue项目中的错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue3===</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../vue3/goal.html">
+            
+                <a href="../vue3/goal.html">
+            
+                    
+                    Vue的设计目标和做了那些优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../vue3/composition.html">
+            
+                <a href="../vue3/composition.html">
+            
+                    
+                    Vue3组合式api与vue2配置式api的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../vue3/performance.html">
+            
+                <a href="../vue3/performance.html">
+            
+                    
+                    Vue3的性能优化体现在哪几方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../vue3/proxy.html">
+            
+                <a href="../vue3/proxy.html">
+            
+                    
+                    Vue3为什么Proxy替代defineProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../vue3/treeshaking.html">
+            
+                <a href="../vue3/treeshaking.html">
+            
+                    
+                    Vue3中Treeshaking特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Webpack===</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../webpack/webpack.html">
+            
+                <a href="../webpack/webpack.html">
+            
+                    
+                    对webpack的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../webpack/HMR.html">
+            
+                <a href="../webpack/HMR.html">
+            
+                    
+                    webpack的热更新是如何做到的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../webpack/Loader.html">
+            
+                <a href="../webpack/Loader.html">
+            
+                    
+                    webpack中常见的Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../webpack/Loader_Plugin.html">
+            
+                <a href="../webpack/Loader_Plugin.html">
+            
+                    
+                    说说Loader和Plugin的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../webpack/Plugin.html">
+            
+                <a href="../webpack/Plugin.html">
+            
+                    
+                    webpack中常见的Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                <a href="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                    
+                    与webpack类似的工具还有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../webpack/build_process.html">
+            
+                <a href="../webpack/build_process.html">
+            
+                    
+                    webpack的构建流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../webpack/improve_build.html">
+            
+                <a href="../webpack/improve_build.html">
+            
+                    
+                    如何提高webpack的构建速度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../webpack/performance.html">
+            
+                <a href="../webpack/performance.html">
+            
+                    
+                    如何借助webpack来优化前端性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../webpack/proxy.html">
+            
+                <a href="../webpack/proxy.html">
+            
+                    
+                    webpack proxy工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >服务端渲染SSR</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9762;&#x8BD5;&#x5B98;&#xFF1A;ssr&#x89E3;&#x51B3;&#x4E86;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;&#x6709;&#x505A;&#x8FC7;ssr&#x5417;&#xFF1F;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x505A;&#x7684;&#xFF1F;">&#x9762;&#x8BD5;&#x5B98;&#xFF1A;SSR&#x89E3;&#x51B3;&#x4E86;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;&#x6709;&#x505A;&#x8FC7;SSR&#x5417;&#xFF1F;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x505A;&#x7684;&#xFF1F;</h1>
+<p><img src="https://static.vue-js.com/84bd83f0-4986-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
+<h2 id="&#x4E00;&#x3001;&#x662F;&#x4EC0;&#x4E48;">&#x4E00;&#x3001;&#x662F;&#x4EC0;&#x4E48;</h2>
+<p><code>Server-Side Rendering</code> &#x6211;&#x4EEC;&#x79F0;&#x5176;&#x4E3A;<code>SSR</code>&#xFF0C;&#x610F;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</p>
+<p>&#x6307;&#x7531;&#x670D;&#x52A1;&#x4FA7;&#x5B8C;&#x6210;&#x9875;&#x9762;&#x7684; <code>HTML</code> &#x7ED3;&#x6784;&#x62FC;&#x63A5;&#x7684;&#x9875;&#x9762;&#x5904;&#x7406;&#x6280;&#x672F;&#xFF0C;&#x53D1;&#x9001;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x7136;&#x540E;&#x4E3A;&#x5176;&#x7ED1;&#x5B9A;&#x72B6;&#x6001;&#x4E0E;&#x4E8B;&#x4EF6;&#xFF0C;&#x6210;&#x4E3A;&#x5B8C;&#x5168;&#x53EF;&#x4EA4;&#x4E92;&#x9875;&#x9762;&#x7684;&#x8FC7;&#x7A0B;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x770B;<code>Web</code>3&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x53D1;&#x5C55;&#x53F2;&#xFF1A;</p>
+<ul>
+<li>&#x4F20;&#x7EDF;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;SSR</li>
+<li>&#x5355;&#x9875;&#x9762;&#x5E94;&#x7528;SPA</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;SSR</li>
+</ul>
+<h3 id="&#x4F20;&#x7EDF;web&#x5F00;&#x53D1;"><strong>&#x4F20;&#x7EDF;web&#x5F00;&#x53D1;</strong></h3>
+<p>&#x7F51;&#x9875;&#x5185;&#x5BB9;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#xFF0C;&#x2F00;&#x6B21;&#x6027;&#x4F20;&#x8F93;&#x5230;&#x6D4F;&#x89C8;&#x5668;</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4d666b24e784fd09e565458c7753b54~tplv-k3u1fbpfcp-watermark.image" alt="img"></p>
+<p>&#x6253;&#x5F00;&#x9875;&#x9762;&#x67E5;&#x770B;&#x6E90;&#x7801;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x62FF;&#x5230;&#x7684;&#x662F;&#x5168;&#x90E8;&#x7684;<code>dom</code>&#x7ED3;&#x6784;</p>
+<h3 id="&#x5355;&#x9875;&#x5E94;&#x7528;spa"><strong>&#x5355;&#x9875;&#x5E94;&#x7528;SPA</strong></h3>
+<p>&#x5355;&#x9875;&#x5E94;&#x7528;&#x4F18;&#x79C0;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#xFF0C;&#x4F7F;&#x5176;&#x9010;&#x6E10;&#x6210;&#x4E3A;&#x4E3B;&#x6D41;&#xFF0C;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x7531;<code>JS</code>&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x79F0;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x6E32;&#x67D3;</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5e8e524a8e7d44cba73e0c3416690087~tplv-k3u1fbpfcp-watermark.image" alt="img"></p>
+<p>&#x6253;&#x5F00;&#x9875;&#x9762;&#x67E5;&#x770B;&#x6E90;&#x7801;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x62FF;&#x5230;&#x7684;&#x4EC5;&#x6709;&#x5BBF;&#x4E3B;&#x5143;&#x7D20;<code>#app</code>&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x5185;&#x5BB9;</p>
+<h3 id="&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;ssr">&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;SSR</h3>
+<p><code>SSR</code>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x540E;&#x7AEF;&#x6E32;&#x67D3;&#x51FA;&#x5B8C;&#x6574;&#x7684;&#x9996;&#x5C4F;&#x7684;<code>dom</code>&#x7ED3;&#x6784;&#x8FD4;&#x56DE;&#xFF0C;&#x524D;&#x7AEF;&#x62FF;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x5305;&#x62EC;&#x9996;&#x5C4F;&#x53CA;&#x5B8C;&#x6574;<code>spa</code>&#x7ED3;&#x6784;&#xFF0C;&#x5E94;&#x7528;&#x6FC0;&#x6D3B;&#x540E;&#x4F9D;&#x7136;&#x6309;&#x7167;<code>spa</code>&#x65B9;&#x5F0F;&#x8FD0;&#x884C;</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f1604e7cfad7431f99920e8ab833bc37~tplv-k3u1fbpfcp-watermark.image" alt="img"></p>
+<p>&#x770B;&#x5B8C;&#x524D;&#x7AEF;&#x53D1;&#x5C55;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x770B;&#x770B;<code>Vue</code>&#x5B98;&#x65B9;&#x5BF9;<code>SSR</code>&#x7684;&#x89E3;&#x91CA;&#xFF1A;</p>
+<blockquote>
+<p>Vue.js &#x662F;&#x6784;&#x5EFA;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6846;&#x67B6;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x51FA; Vue &#x7EC4;&#x4EF6;&#xFF0C;&#x8FDB;&#x884C;&#x751F;&#x6210; DOM &#x548C;&#x64CD;&#x4F5C; DOM&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x540C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684; HTML &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C06;&#x5B83;&#x4EEC;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x6807;&#x8BB0;&quot;&#x6FC0;&#x6D3B;&quot;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x5B8C;&#x5168;&#x53EF;&#x4EA4;&#x4E92;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</p>
+<p>&#x670D;&#x52A1;&#x5668;&#x6E32;&#x67D3;&#x7684; Vue.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&quot;&#x540C;&#x6784;&quot;&#x6216;&quot;&#x901A;&#x7528;&quot;&#xFF0C;&#x56E0;&#x4E3A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x5668;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0A;&#x8FD0;&#x884C;</p>
+</blockquote>
+<p>&#x6211;&#x4EEC;&#x4ECE;&#x4E0A;&#x95E8;&#x89E3;&#x91CA;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x7ED3;&#x8BBA;&#xFF1A;</p>
+<ul>
+<li><code>Vue SSR</code>&#x662F;&#x4E00;&#x4E2A;&#x5728;<code>SPA</code>&#x4E0A;&#x8FDB;&#x884C;&#x6539;&#x826F;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</li>
+<li>&#x901A;&#x8FC7;<code>Vue SSR</code>&#x6E32;&#x67D3;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x6FC0;&#x6D3B;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x4EA4;&#x4E92;</li>
+<li><code>Vue SSR</code>&#x5C06;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#x9996;&#x5C4F;&#xFF0C;&#x5305;&#x542B;&#x4EA4;&#x4E92;&#x7684;<code>SPA</code></li>
+</ul>
+<h2 id="&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x4E86;&#x4EC0;&#x4E48;">&#x4E8C;&#x3001;&#x89E3;&#x51B3;&#x4E86;&#x4EC0;&#x4E48;</h2>
+<p>SSR&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x4E86;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>seo&#xFF1A;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4F18;&#x5148;&#x722C;&#x53D6;&#x9875;&#x9762;<code>HTML</code>&#x7ED3;&#x6784;&#xFF0C;&#x4F7F;&#x7528;<code>ssr</code>&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x4E86;&#x548C;&#x4E1A;&#x52A1;&#x60F3;&#x5173;&#x8054;&#x7684;<code>HTML</code>&#xFF0C;&#x6709;&#x5229;&#x4E8E;<code>seo</code></li>
+<li>&#x9996;&#x5C4F;&#x5448;&#x73B0;&#x6E32;&#x67D3;&#xFF1A;&#x7528;&#x6237;&#x65E0;&#x9700;&#x7B49;&#x5F85;&#x9875;&#x9762;&#x6240;&#x6709;<code>js</code>&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x9875;&#x9762;&#x89C6;&#x56FE;&#xFF08;&#x538B;&#x529B;&#x6765;&#x5230;&#x4E86;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6743;&#x8861;&#x54EA;&#x4E9B;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#xFF0C;&#x54EA;&#x4E9B;&#x4EA4;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;</li>
+</ul>
+<p>&#x4F46;&#x662F;&#x4F7F;&#x7528;<code>SSR</code>&#x540C;&#x6837;&#x5B58;&#x5728;&#x4EE5;&#x4E0B;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ul>
+<li><p>&#x590D;&#x6742;&#x5EA6;&#xFF1A;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x590D;&#x6742;&#x5EA6;</p>
+</li>
+<li><p>&#x5E93;&#x7684;&#x652F;&#x6301;&#x6027;&#xFF0C;&#x4EE3;&#x7801;&#x517C;&#x5BB9;</p>
+</li>
+<li><p>&#x6027;&#x80FD;&#x95EE;&#x9898;</p>
+<ul>
+<li><p>&#x6BCF;&#x4E2A;&#x8BF7;&#x6C42;&#x90FD;&#x662F;<code>n</code>&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x6C61;&#x67D3;&#xFF0C;&#x6D88;&#x8017;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x5927;</p>
+</li>
+<li><p>&#x7F13;&#x5B58; <code>node serve</code>&#x3001; <code>ngin</code>x&#x5224;&#x65AD;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6709;&#x6CA1;&#x6709;&#x8FC7;&#x671F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x8FC7;&#x671F;&#x7684;&#x8BDD;&#x5C31;&#x7F13;&#x5B58;&#xFF0C;&#x7528;&#x521A;&#x521A;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+</li>
+<li>&#x964D;&#x7EA7;&#xFF1A;&#x76D1;&#x63A7;<code>cpu</code>&#x3001;&#x5185;&#x5B58;&#x5360;&#x7528;&#x8FC7;&#x591A;&#xFF0C;&#x5C31;<code>spa</code>&#xFF0C;&#x8FD4;&#x56DE;&#x5355;&#x4E2A;&#x7684;&#x58F3;</li>
+</ul>
+</li>
+<li><p>&#x670D;&#x52A1;&#x5668;&#x8D1F;&#x8F7D;&#x53D8;&#x5927;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;&#x52A1;&#x5668;&#x53EA;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x6765;&#x8BF4;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8D1F;&#x8F7D;&#x66F4;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x614E;&#x91CD;&#x4F7F;&#x7528;</p>
+</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#x5728;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x662F;&#x5426;&#x4F7F;&#x7528;<code>SSR</code>&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x614E;&#x91CD;&#x95EE;&#x95EE;&#x81EA;&#x5DF1;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x9700;&#x8981;<code>SEO</code>&#x7684;&#x9875;&#x9762;&#x662F;&#x5426;&#x53EA;&#x662F;&#x5C11;&#x6570;&#x51E0;&#x4E2A;&#xFF0C;&#x8FD9;&#x4E9B;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9884;&#x6E32;&#x67D3;&#xFF08;Prerender SPA Plugin&#xFF09;&#x5B9E;&#x73B0;</li>
+<li>&#x9996;&#x5C4F;&#x7684;&#x8BF7;&#x6C42;&#x54CD;&#x5E94;&#x903B;&#x8F91;&#x662F;&#x5426;&#x590D;&#x6742;&#xFF0C;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x662F;&#x5426;&#x5927;&#x91CF;&#x4E14;&#x7F13;&#x6162;</li>
+</ol>
+<h2 id="&#x4E09;&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;">&#x4E09;&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;</h2>
+<p>&#x5BF9;&#x4E8E;&#x540C;&#x6784;&#x5F00;&#x53D1;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x7136;&#x4F7F;&#x7528;<code>webpack</code>&#x6253;&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x89E3;&#x51B3;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x6FC0;&#x6D3B;</p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;<code>bundle</code>&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x7AEF;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x548C;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;<code>bundle</code>&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x5BA2;&#x6237;&#x7AEF;&#x6FC0;&#x6D3B;</p>
+<p> <img src="https://static.vue-js.com/9dcd12c0-4986-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
+<p>&#x4EE3;&#x7801;&#x7ED3;&#x6784; &#x9664;&#x4E86;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x5165;&#x53E3;&#x4E4B;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7ED3;&#x6784;&#x548C;&#x4E4B;&#x524D;<code>vue</code>&#x5E94;&#x7528;&#x5B8C;&#x5168;&#x76F8;&#x540C;</p>
+<pre><code class="lang-js">src
+&#x251C;&#x2500;&#x2500; router
+&#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; index.js # &#x8DEF;&#x7531;&#x58F0;&#x660E;
+&#x251C;&#x2500;&#x2500; store
+&#x251C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; index.js # &#x5168;&#x5C40;&#x72B6;&#x6001;
+&#x251C;&#x2500;&#x2500; main.js # &#x2F64;&#x4E8E;&#x521B;&#x5EFA;vue&#x5B9E;&#x4F8B;
+&#x251C;&#x2500;&#x2500; entry-client.js # &#x5BA2;&#x6237;&#x7AEF;&#x2F0A;&#x2F1D;&#xFF0C;&#x2F64;&#x4E8E;&#x9759;&#x6001;&#x5185;&#x5BB9;&#x201C;&#x6FC0;&#x6D3B;&#x201D;
+&#x2514;&#x2500;&#x2500; entry-server.js # &#x670D;&#x52A1;&#x7AEF;&#x2F0A;&#x2F1D;&#xFF0C;&#x2F64;&#x4E8E;&#x2FB8;&#x5C4F;&#x5185;&#x5BB9;&#x6E32;&#x67D3;
+</code></pre>
+<p>&#x8DEF;&#x7531;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;
+<span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-router&quot;</span>;
+
+Vue.use(Router);
+<span class="hljs-comment">//&#x5BFC;&#x51FA;&#x2F2F;&#x2F1A;&#x51FD;&#x6570;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createRouter</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Router({
+        mode: <span class="hljs-string">&apos;history&apos;</span>,
+        routes: [
+            <span class="hljs-comment">// &#x5BA2;&#x6237;&#x7AEF;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x8FD9;&#x2FA5;&#x8981;&#x5199;&#x6210;&#x6E32;&#x67D3;&#x51FD;&#x6570;</span>
+            { path: <span class="hljs-string">&quot;/&quot;</span>, component: { render: h =&gt; h(<span class="hljs-string">&apos;div&apos;</span>, <span class="hljs-string">&apos;index page&apos;</span>) } },
+            { path: <span class="hljs-string">&quot;/detail&quot;</span>, component: { render: h =&gt; h(<span class="hljs-string">&apos;div&apos;</span>, <span class="hljs-string">&apos;detail page&apos;</span>) } }
+        ]
+    });
+}
+</code></pre>
+<p>&#x4E3B;&#x6587;&#x4EF6;main.js</p>
+<p>&#x8DDF;&#x4E4B;&#x524D;&#x4E0D;&#x540C;&#xFF0C;&#x4E3B;&#x6587;&#x4EF6;&#x662F;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;<code>vue</code>&#x5B9E;&#x4F8B;&#x7684;&#x5DE5;&#x5382;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x5747;&#x4F1A;&#x6709;&#x72EC;&#x7ACB;&#x7684;<code>vue</code>&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./App.vue&quot;</span>;
+<span class="hljs-keyword">import</span> { createRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./router&quot;</span>;
+<span class="hljs-comment">// &#x5BFC;&#x51FA;Vue&#x5B9E;&#x4F8B;&#x2F2F;&#x2F1A;&#x51FD;&#x6570;&#xFF0C;&#x4E3A;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x72EC;&#x2F74;&#x5B9E;&#x4F8B;</span>
+<span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x2F42;&#x2F64;&#x4E8E;&#x7ED9;vue&#x5B9E;&#x4F8B;&#x4F20;&#x9012;&#x53C2;&#x6570;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createApp</span>(<span class="hljs-params">context</span>) </span>{
+    <span class="hljs-keyword">const</span> router = createRouter();
+    <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue({
+        router,
+        context,
+        render: h =&gt; h(App)
+    });
+    <span class="hljs-keyword">return</span> { app, router };
+}
+</code></pre>
+<p>&#x7F16;&#x5199;&#x670D;&#x52A1;&#x7AEF;&#x5165;&#x53E3;<code>src/entry-server.js</code></p>
+<p>&#x5B83;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x521B;&#x5EFA;<code>Vue</code>&#x5B9E;&#x4F8B;&#x5E76;&#x6839;&#x636E;&#x4F20;&#x5165;<code>url</code>&#x6307;&#x5B9A;&#x9996;&#x5C4F;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./main&quot;</span>;
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x2F00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x6536;&#x8BF7;&#x6C42;&#x4E0A;&#x4E0B;&#x2F42;&#xFF0C;&#x8FD4;&#x56DE;&#x521B;&#x5EFA;&#x7684;vue&#x5B9E;&#x4F8B;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> context =&gt; {
+    <span class="hljs-comment">// &#x8FD9;&#x2FA5;&#x8FD4;&#x56DE;&#x2F00;&#x4E2A;Promise&#xFF0C;&#x786E;&#x4FDD;&#x8DEF;&#x7531;&#x6216;&#x7EC4;&#x4EF6;&#x51C6;&#x5907;&#x5C31;&#x7EEA;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        <span class="hljs-keyword">const</span> { app, router } = createApp(context);
+        <span class="hljs-comment">// &#x8DF3;&#x8F6C;&#x5230;&#x2FB8;&#x5C4F;&#x7684;&#x5730;&#x5740;</span>
+        router.push(context.url);
+        <span class="hljs-comment">// &#x8DEF;&#x7531;&#x5C31;&#x7EEA;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</span>
+        router.onReady(() =&gt; {
+            resolve(app);
+        }, reject);
+    });
+};
+</code></pre>
+<p>&#x7F16;&#x5199;&#x5BA2;&#x6237;&#x7AEF;&#x5165;&#x53E3;<code>entry-client.js</code></p>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5165;&#x53E3;&#x53EA;&#x9700;&#x521B;&#x5EFA;<code>vue</code>&#x5B9E;&#x4F8B;&#x5E76;&#x6267;&#x884C;&#x6302;&#x8F7D;&#xFF0C;&#x8FD9;&#x2F00;&#x6B65;&#x79F0;&#x4E3A;&#x6FC0;&#x6D3B;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./main&quot;</span>;
+<span class="hljs-comment">// &#x521B;&#x5EFA;vue&#x3001;router&#x5B9E;&#x4F8B;</span>
+<span class="hljs-keyword">const</span> { app, router } = createApp();
+<span class="hljs-comment">// &#x8DEF;&#x7531;&#x5C31;&#x7EEA;&#xFF0C;&#x6267;&#x2F8F;&#x6302;&#x8F7D;</span>
+router.onReady(() =&gt; {
+    app.$mount(<span class="hljs-string">&quot;#app&quot;</span>);
+});
+</code></pre>
+<p>&#x5BF9;<code>webpack</code>&#x8FDB;&#x884C;&#x914D;&#x7F6E;</p>
+<p>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-js">npm install webpack-node-externals lodash.merge -D
+</code></pre>
+<p>&#x5BF9;<code>vue.config.js</code>&#x8FDB;&#x884C;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x4E24;&#x4E2A;&#x63D2;&#x4EF6;&#x5206;&#x522B;&#x8D1F;&#x8D23;&#x6253;&#x5305;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;</span>
+<span class="hljs-keyword">const</span> VueSSRServerPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;vue-server-renderer/server-plugin&quot;</span>);
+<span class="hljs-keyword">const</span> VueSSRClientPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;vue-server-renderer/client-plugin&quot;</span>);
+<span class="hljs-keyword">const</span> nodeExternals = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;webpack-node-externals&quot;</span>);
+<span class="hljs-keyword">const</span> merge = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash.merge&quot;</span>);
+<span class="hljs-comment">// &#x6839;&#x636E;&#x4F20;&#x2F0A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x51B3;&#x5B9A;&#x2F0A;&#x2F1D;&#x2F42;&#x4EF6;&#x548C;&#x76F8;&#x5E94;&#x914D;&#x7F6E;&#x9879;</span>
+<span class="hljs-keyword">const</span> TARGET_NODE = process.env.WEBPACK_TARGET === <span class="hljs-string">&quot;node&quot;</span>;
+<span class="hljs-keyword">const</span> target = TARGET_NODE ? <span class="hljs-string">&quot;server&quot;</span> : <span class="hljs-string">&quot;client&quot;</span>;
+<span class="hljs-built_in">module</span>.exports = {
+    css: {
+        extract: <span class="hljs-literal">false</span>
+    },
+    outputDir: <span class="hljs-string">&apos;./dist/&apos;</span>+target,
+    configureWebpack: () =&gt; ({
+        <span class="hljs-comment">// &#x5C06; entry &#x6307;&#x5411;&#x5E94;&#x2F64;&#x7A0B;&#x5E8F;&#x7684; server / client &#x2F42;&#x4EF6;</span>
+        entry: <span class="hljs-string">`./src/entry-<span class="hljs-subst">${target}</span>.js`</span>,
+        <span class="hljs-comment">// &#x5BF9; bundle renderer &#x63D0;&#x4F9B; source map &#x2F40;&#x6301;</span>
+        devtool: <span class="hljs-string">&apos;source-map&apos;</span>,
+        <span class="hljs-comment">// target&#x8BBE;&#x7F6E;&#x4E3A;node&#x4F7F;webpack&#x4EE5;Node&#x9002;&#x2F64;&#x7684;&#x2F45;&#x5F0F;&#x5904;&#x7406;&#x52A8;&#x6001;&#x5BFC;&#x2F0A;&#xFF0C;</span>
+        <span class="hljs-comment">// &#x5E76;&#x4E14;&#x8FD8;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;Vue&#x7EC4;&#x4EF6;&#x65F6;&#x544A;&#x77E5;`vue-loader`&#x8F93;&#x51FA;&#x2FAF;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;&#x3002;</span>
+        target: TARGET_NODE ? <span class="hljs-string">&quot;node&quot;</span> : <span class="hljs-string">&quot;web&quot;</span>,
+        <span class="hljs-comment">// &#x662F;&#x5426;&#x6A21;&#x62DF;node&#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+        node: TARGET_NODE ? <span class="hljs-literal">undefined</span> : <span class="hljs-literal">false</span>,
+        output: {
+            <span class="hljs-comment">// &#x6B64;&#x5904;&#x4F7F;&#x2F64;Node&#x2EDB;&#x683C;&#x5BFC;&#x51FA;&#x6A21;&#x5757;</span>
+            libraryTarget: TARGET_NODE ? <span class="hljs-string">&quot;commonjs2&quot;</span> : <span class="hljs-literal">undefined</span>
+        },
+        <span class="hljs-comment">// https://webpack.js.org/configuration/externals/#function</span>
+        <span class="hljs-comment">// https://github.com/liady/webpack-node-externals</span>
+        <span class="hljs-comment">// &#x5916;&#x7F6E;&#x5316;&#x5E94;&#x2F64;&#x7A0B;&#x5E8F;&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x670D;&#x52A1;&#x5668;&#x6784;&#x5EFA;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x5E76;&#x2F63;&#x6210;&#x8F83;&#x2F29;&#x7684;&#x6253;&#x5305;&#x2F42;&#x4EF6;&#x3002;</span>
+        externals: TARGET_NODE
+        ? nodeExternals({
+            <span class="hljs-comment">// &#x4E0D;&#x8981;&#x5916;&#x7F6E;&#x5316;webpack&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#x3002;</span>
+            <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x2FA5;&#x6DFB;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x2F42;&#x4EF6;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x672A;&#x5904;&#x7406; *.vue &#x539F;&#x59CB;&#x2F42;&#x4EF6;&#xFF0C;</span>
+            <span class="hljs-comment">// &#x8FD8;&#x5E94;&#x8BE5;&#x5C06;&#x4FEE;&#x6539;`global`&#xFF08;&#x4F8B;&#x5982;polyfill&#xFF09;&#x7684;&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#x5217;&#x2F0A;&#x2F69;&#x540D;&#x5355;</span>
+            whitelist: [<span class="hljs-regexp">/\.css$/</span>]
+        })
+        : <span class="hljs-literal">undefined</span>,
+        optimization: {
+            splitChunks: <span class="hljs-literal">undefined</span>
+        },
+        <span class="hljs-comment">// &#x8FD9;&#x662F;&#x5C06;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6574;&#x4E2A;&#x8F93;&#x51FA;&#x6784;&#x5EFA;&#x4E3A;&#x5355;&#x4E2A; JSON &#x2F42;&#x4EF6;&#x7684;&#x63D2;&#x4EF6;&#x3002;</span>
+        <span class="hljs-comment">// &#x670D;&#x52A1;&#x7AEF;&#x9ED8;&#x8BA4;&#x2F42;&#x4EF6;&#x540D;&#x4E3A; `vue-ssr-server-bundle.json`</span>
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x7AEF;&#x9ED8;&#x8BA4;&#x2F42;&#x4EF6;&#x540D;&#x4E3A; `vue-ssr-client-manifest.json`&#x3002;</span>
+        plugins: [TARGET_NODE ? <span class="hljs-keyword">new</span> VueSSRServerPlugin() : <span class="hljs-keyword">new</span>
+                  VueSSRClientPlugin()]
+    }),
+    chainWebpack: config =&gt; {
+        <span class="hljs-comment">// cli4&#x9879;&#x2F6C;&#x6DFB;&#x52A0;</span>
+        <span class="hljs-keyword">if</span> (TARGET_NODE) {
+            config.optimization.delete(<span class="hljs-string">&apos;splitChunks&apos;</span>)
+        }
+
+        config.module
+            .rule(<span class="hljs-string">&quot;vue&quot;</span>)
+            .use(<span class="hljs-string">&quot;vue-loader&quot;</span>)
+            .tap(options =&gt; {
+            merge(options, {
+                optimizeSSR: <span class="hljs-literal">false</span>
+            });
+        });
+    }
+};
+</code></pre>
+<p>&#x5BF9;&#x811A;&#x672C;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-js">npm i cross-env -D
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x521B;&#x5EFA;&#x811A;&#x672C;<code>package.json</code></p>
+<pre><code class="lang-js"><span class="hljs-string">&quot;scripts&quot;</span>: {
+ <span class="hljs-string">&quot;build:client&quot;</span>: <span class="hljs-string">&quot;vue-cli-service build&quot;</span>,
+ <span class="hljs-string">&quot;build:server&quot;</span>: <span class="hljs-string">&quot;cross-env WEBPACK_TARGET=node vue-cli-service build&quot;</span>,
+ <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;npm run build:server &amp;&amp; npm run build:client&quot;</span>
+}
+</code></pre>
+<blockquote>
+<p>&#x6267;&#x884C;&#x6253;&#x5305;&#xFF1A;npm run build</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4FEE;&#x6539;&#x5BBF;&#x4E3B;&#x6587;&#x4EF6;<code>/public/index.html</code></p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width,initial-scale=1.0&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--vue-ssr-outlet--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p><!--vue-ssr-outlet-->   &#x662F;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#x5165;&#x53E3;&#x4F4D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#x4E0D;&#x80FD;&#x4E3A;&#x4E86;&#x597D;&#x770B;&#x800C;&#x5728;&#x524D;&#x540E;&#x52A0;&#x7A7A;&#x683C;</p>
+</blockquote>
+<p>&#x5B89;&#x88C5;<code>vuex</code></p>
+<pre><code class="lang-js">npm install -S vuex
+</code></pre>
+<p>&#x521B;&#x5EFA;<code>vuex</code>&#x5DE5;&#x5382;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
+Vue.use(Vuex)
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStore</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vuex.Store({
+        state: {
+            count:<span class="hljs-number">108</span>
+        },
+        mutations: {
+            add(state){
+                state.count += <span class="hljs-number">1</span>;
+            }
+        }
+    })
+}
+</code></pre>
+<p>&#x5728;<code>main.js</code>&#x6587;&#x4EF6;&#x4E2D;&#x6302;&#x8F7D;<code>store</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createApp</span> (<span class="hljs-params">context</span>) </span>{
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">const</span> store = createStore()
+    <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Vue({
+        store, <span class="hljs-comment">// &#x6302;&#x8F7D;</span>
+        render: h =&gt; h(App)
+    })
+    <span class="hljs-keyword">return</span> { app, router, store }
+}
+</code></pre>
+<p>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#x662F;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&quot;&#x5FEB;&#x7167;&quot;&#xFF0C;&#x5982;&#x679C;&#x5E94;&#x7528;&#x4F9D;&#x8D56;&#x4E8E;&#x2F00;&#x4E9B;&#x5F02;&#x6B65;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5F00;&#x59CB;&#x6E32;&#x67D3;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x9884;&#x53D6;&#x548C;&#x89E3;&#x6790;&#x597D;&#x8FD9;&#x4E9B;&#x6570;&#x636E;</p>
+<p>&#x5728;<code>store</code>&#x8FDB;&#x884C;&#x4E00;&#x6B65;&#x6570;&#x636E;&#x83B7;&#x53D6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createStore</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Vuex.Store({
+        mutations: {
+            <span class="hljs-comment">// &#x52A0;&#x2F00;&#x4E2A;&#x521D;&#x59CB;&#x5316;</span>
+            init(state, count) {
+                state.count = count;
+            },
+        },
+        actions: {
+            <span class="hljs-comment">// &#x52A0;&#x2F00;&#x4E2A;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;count&#x7684;action</span>
+            getCount({ commit }) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(resolve =&gt; {
+                    setTimeout(() =&gt; {
+                        commit(<span class="hljs-string">&quot;init&quot;</span>, <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span>);
+                        resolve();
+                    }, <span class="hljs-number">1000</span>);
+                });
+            },
+        },
+    });
+}
+</code></pre>
+<p>&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x9884;&#x53D6;&#x903B;&#x8F91;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    asyncData({ store, route }) { <span class="hljs-comment">// &#x7EA6;&#x5B9A;&#x9884;&#x53D6;&#x903B;&#x8F91;&#x7F16;&#x5199;&#x5728;&#x9884;&#x53D6;&#x94A9;&#x2F26;asyncData&#x4E2D;</span>
+        <span class="hljs-comment">// &#x89E6;&#x53D1; action &#x540E;&#xFF0C;&#x8FD4;&#x56DE; Promise &#x4EE5;&#x4FBF;&#x786E;&#x5B9A;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;</span>
+        <span class="hljs-keyword">return</span> store.dispatch(<span class="hljs-string">&quot;getCount&quot;</span>);
+    }
+};
+</code></pre>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x6570;&#x636E;&#x9884;&#x53D6;&#xFF0C;<code>entry-server.js</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./app&quot;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> context =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>((resolve, reject) =&gt; {
+        <span class="hljs-comment">// &#x62FF;&#x51FA;store&#x548C;router&#x5B9E;&#x4F8B;</span>
+        <span class="hljs-keyword">const</span> { app, router, store } = createApp(context);
+        router.push(context.url);
+        router.onReady(() =&gt; {
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5339;&#x914D;&#x7684;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x6570;&#x7EC4;</span>
+            <span class="hljs-keyword">const</span> matchedComponents = router.getMatchedComponents();
+
+            <span class="hljs-comment">// &#x82E5;&#x2F46;&#x5339;&#x914D;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+            <span class="hljs-keyword">if</span> (!matchedComponents.length) {
+                <span class="hljs-keyword">return</span> reject({ code: <span class="hljs-number">404</span> });
+            }
+
+            <span class="hljs-comment">// &#x5BF9;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x8DEF;&#x7531;&#x7EC4;&#x4EF6;&#x8C03;&#x2F64;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7684;`asyncData()`</span>
+            <span class="hljs-built_in">Promise</span>.all(
+                matchedComponents.map(Component =&gt; {
+                    <span class="hljs-keyword">if</span> (Component.asyncData) {
+                        <span class="hljs-keyword">return</span> Component.asyncData({
+                            store,
+                            route: router.currentRoute,
+                        });
+                    }
+                }),
+            )
+                .then(() =&gt; {
+                <span class="hljs-comment">// &#x6240;&#x6709;&#x9884;&#x53D6;&#x94A9;&#x2F26; resolve &#x540E;&#xFF0C;</span>
+                <span class="hljs-comment">// store &#x5DF2;&#x7ECF;&#x586B;&#x5145;&#x2F0A;&#x6E32;&#x67D3;&#x5E94;&#x2F64;&#x6240;&#x9700;&#x72B6;&#x6001;</span>
+                <span class="hljs-comment">// &#x5C06;&#x72B6;&#x6001;&#x9644;&#x52A0;&#x5230;&#x4E0A;&#x4E0B;&#x2F42;&#xFF0C;&#x4E14; `template` &#x9009;&#x9879;&#x2F64;&#x4E8E; renderer &#x65F6;&#xFF0C;</span>
+                <span class="hljs-comment">// &#x72B6;&#x6001;&#x5C06;&#x2F83;&#x52A8;&#x5E8F;&#x5217;&#x5316;&#x4E3A; `window.__INITIAL_STATE__`&#xFF0C;&#x5E76;&#x6CE8;&#x2F0A; HTML</span>
+                context.state = store.state;
+
+                resolve(app);
+            })
+                .catch(reject);
+        }, reject);
+    });
+};
+</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x6302;&#x8F7D;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#xFF0C;<code>store</code> &#x5C31;&#x5E94;&#x8BE5;&#x83B7;&#x53D6;&#x5230;&#x72B6;&#x6001;&#xFF0C;<code>entry-client.js</code></p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x5BFC;&#x51FA;store</span>
+<span class="hljs-keyword">const</span> { app, router, store } = createApp();
+<span class="hljs-comment">// &#x5F53;&#x4F7F;&#x2F64; template &#x65F6;&#xFF0C;context.state &#x5C06;&#x4F5C;&#x4E3A; window.__INITIAL_STATE__ &#x72B6;&#x6001;&#x2F83;&#x52A8;&#x5D4C;&#x2F0A;&#x5230;&#x6700;&#x7EC8;&#x7684; HTML </span>
+<span class="hljs-comment">// &#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x6302;&#x8F7D;&#x5230;&#x5E94;&#x2F64;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#xFF0C;store &#x5C31;&#x5E94;&#x8BE5;&#x83B7;&#x53D6;&#x5230;&#x72B6;&#x6001;&#xFF1A;</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.__INITIAL_STATE__) {
+    store.replaceState(<span class="hljs-built_in">window</span>.__INITIAL_STATE__);
+}
+</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x6570;&#x636E;&#x9884;&#x53D6;&#x5904;&#x7406;&#xFF0C;<code>main.js</code></p>
+<pre><code class="lang-js">Vue.mixin({
+    beforeMount() {
+        <span class="hljs-keyword">const</span> { asyncData } = <span class="hljs-keyword">this</span>.$options;
+        <span class="hljs-keyword">if</span> (asyncData) {
+            <span class="hljs-comment">// &#x5C06;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x5206;&#x914D;&#x7ED9; promise</span>
+            <span class="hljs-comment">// &#x4EE5;&#x4FBF;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6570;&#x636E;&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x540E;</span>
+            <span class="hljs-comment">// &#x901A;&#x8FC7;&#x8FD0;&#x2F8F; `this.dataPromise.then(...)` &#x6765;&#x6267;&#x2F8F;&#x5176;&#x4ED6;&#x4EFB;&#x52A1;</span>
+            <span class="hljs-keyword">this</span>.dataPromise = asyncData({
+                store: <span class="hljs-keyword">this</span>.$store,
+                route: <span class="hljs-keyword">this</span>.$route,
+            });
+        }
+    },
+});
+</code></pre>
+<p>&#x4FEE;&#x6539;&#x670D;&#x52A1;&#x5668;&#x542F;&#x52A8;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x83B7;&#x53D6;&#x2F42;&#x4EF6;&#x8DEF;&#x5F84;</span>
+<span class="hljs-keyword">const</span> resolve = dir =&gt; <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>).resolve(__dirname, dir)
+<span class="hljs-comment">// &#x7B2C; 1 &#x6B65;&#xFF1A;&#x5F00;&#x653E;dist/client&#x2F6C;&#x5F55;&#xFF0C;&#x5173;&#x95ED;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;index&#x2EDA;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x4E0D;&#x7136;&#x5230;&#x4E0D;&#x4E86;&#x540E;&#x2FAF;&#x8DEF;&#x7531;</span>
+app.use(express.static(resolve(<span class="hljs-string">&apos;../dist/client&apos;</span>), {index: <span class="hljs-literal">false</span>}))
+<span class="hljs-comment">// &#x7B2C; 2 &#x6B65;&#xFF1A;&#x83B7;&#x5F97;&#x2F00;&#x4E2A;createBundleRenderer</span>
+<span class="hljs-keyword">const</span> { createBundleRenderer } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;vue-server-renderer&quot;</span>);
+<span class="hljs-comment">// &#x7B2C; 3 &#x6B65;&#xFF1A;&#x670D;&#x52A1;&#x7AEF;&#x6253;&#x5305;&#x2F42;&#x4EF6;&#x5730;&#x5740;</span>
+<span class="hljs-keyword">const</span> bundle = resolve(<span class="hljs-string">&quot;../dist/server/vue-ssr-server-bundle.json&quot;</span>);
+<span class="hljs-comment">// &#x7B2C; 4 &#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x6E32;&#x67D3;&#x5668;</span>
+<span class="hljs-keyword">const</span> renderer = createBundleRenderer(bundle, {
+    runInNewContext: <span class="hljs-literal">false</span>, <span class="hljs-comment">// https://ssr.vuejs.org/zh/api/#runinnewcontext</span>
+    template: <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>).readFileSync(resolve(<span class="hljs-string">&quot;../public/index.html&quot;</span>), <span class="hljs-string">&quot;utf8&quot;</span>), <span class="hljs-comment">// &#x5BBF;&#x4E3B;&#x2F42;&#x4EF6;</span>
+    clientManifest: <span class="hljs-built_in">require</span>(resolve(<span class="hljs-string">&quot;../dist/client/vue-ssr-clientmanifest.json&quot;</span>)) <span class="hljs-comment">// &#x5BA2;&#x6237;&#x7AEF;&#x6E05;&#x5355;</span>
+});
+app.get(<span class="hljs-string">&apos;*&apos;</span>, <span class="hljs-keyword">async</span> (req,res)=&gt;{
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;url&#x548C;title&#x4E24;&#x4E2A;&#x91CD;&#x8981;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">const</span> context = {
+        title:<span class="hljs-string">&apos;ssr test&apos;</span>,
+        url:req.url
+    }
+    <span class="hljs-keyword">const</span> html = <span class="hljs-keyword">await</span> renderer.renderToString(context);
+    res.send(html)
+})
+</code></pre>
+<h3 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;<code>ssr</code>&#x4E0D;&#x5B58;&#x5728;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B21;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;<code>vue</code>&#x5B9E;&#x4F8B;</li>
+<li>&#x5B9E;&#x73B0;<code>ssr</code>&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x7AEF;&#x9996;&#x5C4F;&#x6E32;&#x67D3;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x6FC0;&#x6D3B;</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x5F02;&#x6B65;&#x83B7;&#x53D6;&#x6570;&#x636E;<code>asyncData</code>&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x9996;&#x5C4F;&#x5F02;&#x6B65;&#x83B7;&#x53D6;&#x548C;&#x5207;&#x6362;&#x7EC4;&#x4EF6;&#x83B7;&#x53D6;<ul>
+<li>&#x9996;&#x5C4F;&#x5F02;&#x6B65;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x9884;&#x6E32;&#x67D3;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5E94;&#x8BE5;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;</li>
+<li>&#x5207;&#x6362;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;<code>mixin</code>&#x6DF7;&#x5165;&#xFF0C;&#x5728;<code>beforeMount</code>&#x94A9;&#x5B50;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x83B7;&#x53D6;</li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-06-18 18:17:11
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="spa.html" class="navigation navigation-prev " aria-label="Previous page: SPA单页面的理解以及它的优缺点">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="new_vue.html" class="navigation navigation-next " aria-label="Next page: Vue实例挂载的过程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"服务端渲染SSR","level":"6.14","depth":1,"next":{"title":"Vue实例挂载的过程","level":"6.15","depth":1,"path":"vue/new_vue.md","ref":"vue/new_vue.md","articles":[]},"previous":{"title":"SPA单页面的理解以及它的优缺点","level":"6.13","depth":1,"path":"vue/spa.md","ref":"vue/spa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","splitter","expandable-chapters-small","-copy-code-button","code","tbfed-pagefooter","advanced-emoji","-sharing","sharing-plus","-lunr","-search","search-plus","theme-comscore"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":1},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"dunn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"information.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"面试宝典","language":"zh-hans","gitbook":"*","description":"面试常见问题等"},"file":{"path":"vue/ssr.md","mtime":"2021-06-18T10:17:11.321Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-18T10:36:40.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

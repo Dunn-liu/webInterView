@@ -1,0 +1,66 @@
+{
+    "title": "面试宝典",
+    "description": "面试常见问题等",
+    "language": "zh-hans",
+    "author": "dunn",
+    "plugins": [
+        "back-to-top-button",
+        "splitter",
+        "expandable-chapters-small",
+        "-copy-code-button",
+        "code",
+        "tbfed-pagefooter",
+        "advanced-emoji",
+		"-sharing", 
+		"sharing-plus",
+		"-lunr", 
+		"-search", 
+		"search-plus",
+		"theme-comscore"
+    ],
+	"structure" : {
+        "readme" : "information.md"
+    },
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "white",
+            "family": "sans",
+            "size":  1
+        },
+        "theme-default": {
+            "showLevel": false
+        },
+        "tbfed-pagefooter": {
+            "copyright": "2021",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+		"sharing": {
+		   "douban": false,
+		   "facebook": false,
+		   "google": true,
+		   "hatenaBookmark": false,
+		   "instapaper": false,
+		   "line": true,
+		   "linkedin": true,
+		   "messenger": false,
+		   "pocket": false,
+		   "qq": true,
+		   "qzone": true,
+		   "stumbleupon": false,
+		   "twitter": false,
+		   "viber": false,
+		   "vk": false,
+		   "weibo": true,
+		   "whatsapp": false,
+		   "all": [
+			   "facebook", "google", "twitter",
+			   "weibo", "instapaper", "linkedin",
+			   "pocket", "stumbleupon"
+		   ]
+        }
+    },
+	"styles": {
+              "website": "styles/website.css"
+    }
+}

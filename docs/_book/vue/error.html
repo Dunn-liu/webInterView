@@ -1,0 +1,2198 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>怎么处理vue项目中的错误 · 面试宝典</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="dunn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../vue3/goal.html" />
+    
+    
+    <link rel="prev" href="cors.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../es6/array.html">
+            
+                <a href="../es6/array.html">
+            
+                    
+                    数组新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../es6/function.html">
+            
+                <a href="../es6/function.html">
+            
+                    
+                    函数新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../es6/object.html">
+            
+                <a href="../es6/object.html">
+            
+                    
+                    对象新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../es6/decorator.html">
+            
+                <a href="../es6/decorator.html">
+            
+                    
+                    ES6中装饰器 Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../es6/generator.html">
+            
+                <a href="../es6/generator.html">
+            
+                    
+                    ES6中Generator函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../es6/module.html">
+            
+                <a href="../es6/module.html">
+            
+                    
+                    ES6中Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../es6/promise.html">
+            
+                <a href="../es6/promise.html">
+            
+                    
+                    ES6中的promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../es6/proxy.html">
+            
+                <a href="../es6/proxy.html">
+            
+                    
+                    ES6中的Proxy与使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../es6/set_map.html">
+            
+                <a href="../es6/set_map.html">
+            
+                    
+                    ES6新增Set、Map两种数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../es6/var_let_const.html">
+            
+                <a href="../es6/var_let_const.html">
+            
+                    
+                    var、let、const之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===JavaScript===</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../JavaScript/== _===.html">
+            
+                <a href="../JavaScript/== _===.html">
+            
+                    
+                    == 和 ===区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../JavaScript/BOM.html">
+            
+                <a href="../JavaScript/BOM.html">
+            
+                    
+                    BOM理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../JavaScript/Dom.html">
+            
+                <a href="../JavaScript/Dom.html">
+            
+                    
+                    Dom理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../JavaScript/ajax.html">
+            
+                <a href="../JavaScript/ajax.html">
+            
+                    
+                    Ajax原理与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../JavaScript/array_api.html">
+            
+                <a href="../JavaScript/array_api.html">
+            
+                    
+                    数组常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../JavaScript/bind_call_apply.html">
+            
+                <a href="../JavaScript/bind_call_apply.html">
+            
+                    
+                    Bind Call Apply 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../JavaScript/cache.html">
+            
+                <a href="../JavaScript/cache.html">
+            
+                    
+                    Javascript本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../JavaScript/closure.html">
+            
+                <a href="../JavaScript/closure.html">
+            
+                    
+                    闭包的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../JavaScript/context_stack.html">
+            
+                <a href="../JavaScript/context_stack.html">
+            
+                    
+                    执行上下文和执行栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../JavaScript/continue_to_upload.html">
+            
+                <a href="../JavaScript/continue_to_upload.html">
+            
+                    
+                    大文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../JavaScript/copy.html">
+            
+                <a href="../JavaScript/copy.html">
+            
+                    
+                    深拷贝浅拷贝的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../JavaScript/data_type.html">
+            
+                <a href="../JavaScript/data_type.html">
+            
+                    
+                    js数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../JavaScript/debounce_throttle.html">
+            
+                <a href="../JavaScript/debounce_throttle.html">
+            
+                    
+                    函数的防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../JavaScript/event_Model.html">
+            
+                <a href="../JavaScript/event_Model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../JavaScript/event_agent.html">
+            
+                <a href="../JavaScript/event_agent.html">
+            
+                    
+                    事件代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../JavaScript/event_loop.html">
+            
+                <a href="../JavaScript/event_loop.html">
+            
+                    
+                    事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../JavaScript/function_cache.html">
+            
+                <a href="../JavaScript/function_cache.html">
+            
+                    
+                    函数缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../JavaScript/functional_programming.html">
+            
+                <a href="../JavaScript/functional_programming.html">
+            
+                    
+                    函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../JavaScript/inherit.html">
+            
+                <a href="../JavaScript/inherit.html">
+            
+                    
+                    js继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../JavaScript/loss_accuracy.html">
+            
+                <a href="../JavaScript/loss_accuracy.html">
+            
+                    
+                    Javascript 数字精度丢失
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../JavaScript/memory_leak.html">
+            
+                <a href="../JavaScript/memory_leak.html">
+            
+                    
+                    js内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../JavaScript/new.html">
+            
+                <a href="../JavaScript/new.html">
+            
+                    
+                    new操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../JavaScript/prototype.html">
+            
+                <a href="../JavaScript/prototype.html">
+            
+                    
+                    原型和原型链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                <a href="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                    
+                    如何实现上拉加载，下拉刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../JavaScript/regexp.html">
+            
+                <a href="../JavaScript/regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../JavaScript/scope.html">
+            
+                <a href="../JavaScript/scope.html">
+            
+                    
+                    作用域链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../JavaScript/security.html">
+            
+                <a href="../JavaScript/security.html">
+            
+                    
+                    web常见的攻击方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../JavaScript/single_sign.html">
+            
+                <a href="../JavaScript/single_sign.html">
+            
+                    
+                    实现单点登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../JavaScript/string_api.html">
+            
+                <a href="../JavaScript/string_api.html">
+            
+                    
+                    字符串的常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../JavaScript/tail_recursion.html">
+            
+                <a href="../JavaScript/tail_recursion.html">
+            
+                    
+                    对尾递归的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../JavaScript/this.html">
+            
+                <a href="../JavaScript/this.html">
+            
+                    
+                    this对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../JavaScript/type_conversion.html">
+            
+                <a href="../JavaScript/type_conversion.html">
+            
+                    
+                    JavaScript 中的类型转换机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../JavaScript/typeof_instanceof.html">
+            
+                <a href="../JavaScript/typeof_instanceof.html">
+            
+                    
+                    typeof 与 instanceof 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../JavaScript/visible.html">
+            
+                <a href="../JavaScript/visible.html">
+            
+                    
+                    元素是否在可视区域中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===CSS===</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../css/BFC.html">
+            
+                <a href="../css/BFC.html">
+            
+                    
+                    对BFC的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../css/animation.html">
+            
+                <a href="../css/animation.html">
+            
+                    
+                    css3动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../css/box.html">
+            
+                <a href="../css/box.html">
+            
+                    
+                    对盒子模型的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../css/center.html">
+            
+                <a href="../css/center.html">
+            
+                    
+                    元素水平垂直居中的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../css/column_layout.html">
+            
+                <a href="../css/column_layout.html">
+            
+                    
+                    实现两栏,三栏布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../css/css3_features.html">
+            
+                <a href="../css/css3_features.html">
+            
+                    
+                    CSS3新增特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../css/css_performance.html">
+            
+                <a href="../css/css_performance.html">
+            
+                    
+                    CSS提高性能的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../css/dp_px_dpr_ppi.html">
+            
+                <a href="../css/dp_px_dpr_ppi.html">
+            
+                    
+                    设备像素、css像素、设备独立像素、dpr、ppi 之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../css/em_px_rem_vh_vw.html">
+            
+                <a href="../css/em_px_rem_vh_vw.html">
+            
+                    
+                    em/px/rem/vh/vw区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="../css/flexbox.html">
+            
+                <a href="../css/flexbox.html">
+            
+                    
+                    弹性盒布局模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="../css/grid.html">
+            
+                <a href="../css/grid.html">
+            
+                    
+                    grid网格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="../css/hide_attributes.html">
+            
+                <a href="../css/hide_attributes.html">
+            
+                    
+                    css隐藏页面元素方式,区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="../css/layout_painting.html">
+            
+                <a href="../css/layout_painting.html">
+            
+                    
+                    回流跟重绘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="../css/less_12px.html">
+            
+                <a href="../css/less_12px.html">
+            
+                    
+                    让Chrome支持小于12px 的文字方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="../css/responsive_layout.html">
+            
+                <a href="../css/responsive_layout.html">
+            
+                    
+                    响应式设计的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="../css/sass_less_stylus.html">
+            
+                <a href="../css/sass_less_stylus.html">
+            
+                    
+                    Css预编语言的理解与区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="../css/selector.html">
+            
+                <a href="../css/selector.html">
+            
+                    
+                    css选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="../css/single_multi_line.html">
+            
+                <a href="../css/single_multi_line.html">
+            
+                    
+                    实现单行／多行文本溢出省略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="../css/triangle.html">
+            
+                <a href="../css/triangle.html">
+            
+                    
+                    CSS如何画一个三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="../css/visual_scrolling.html">
+            
+                <a href="../css/visual_scrolling.html">
+            
+                    
+                    使用css完成视差滚动效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===HTTP===</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../http/1.0_1.1_2.0.html">
+            
+                <a href="../http/1.0_1.1_2.0.html">
+            
+                    
+                    HTTP1.0/1.1/2.0 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../http/CDN.html">
+            
+                <a href="../http/CDN.html">
+            
+                    
+                    如何理解CDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../http/DNS.html">
+            
+                <a href="../http/DNS.html">
+            
+                    
+                    DNS 完整的查询过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../http/GET_POST.html">
+            
+                <a href="../http/GET_POST.html">
+            
+                    
+                    GET和POST区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../http/HTTPS.html">
+            
+                <a href="../http/HTTPS.html">
+            
+                    
+                    HTTPS是如何保证安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../http/HTTP_HTTPS.html">
+            
+                <a href="../http/HTTP_HTTPS.html">
+            
+                    
+                    HTTP 和 HTTPS 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../http/OSI.html">
+            
+                <a href="../http/OSI.html">
+            
+                    
+                    理解OSI七层模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../http/TCP_IP.html">
+            
+                <a href="../http/TCP_IP.html">
+            
+                    
+                    理解TCP/IP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../http/UDP_TCP.html">
+            
+                <a href="../http/UDP_TCP.html">
+            
+                    
+                    UDP 和 TCP的区别和应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../http/WebSocket.html">
+            
+                <a href="../http/WebSocket.html">
+            
+                    
+                    对WebSocket的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../http/after_url.html">
+            
+                <a href="../http/after_url.html">
+            
+                    
+                    地址栏输入 URL 敲下回车后发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../http/handshakes_waves.html">
+            
+                <a href="../http/handshakes_waves.html">
+            
+                    
+                    TCP为什么需要三次握手和四次挥手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../http/headers.html">
+            
+                <a href="../http/headers.html">
+            
+                    
+                    TTP 常见的请求头有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../http/status.html">
+            
+                <a href="../http/status.html">
+            
+                    
+                    HTTP 常见的状态码有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===NodeJS===</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../nodeJS/fs.html">
+            
+                <a href="../nodeJS/fs.html">
+            
+                    
+                    Node 中的 fs模块的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../nodeJS/global.html">
+            
+                <a href="../nodeJS/global.html">
+            
+                    
+                    Node. js 有哪些全局对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../nodeJS/nodejs.html">
+            
+                <a href="../nodeJS/nodejs.html">
+            
+                    
+                    Node.js 的理解？优缺点？应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../nodeJS/process.html">
+            
+                <a href="../nodeJS/process.html">
+            
+                    
+                    Node 中的 process 的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue===</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="vue.html">
+            
+                <a href="vue.html">
+            
+                    
+                    对Vue的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="vue3_vue2.html">
+            
+                <a href="vue3_vue2.html">
+            
+                    
+                    Vue2和vue3的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="vnode.html">
+            
+                <a href="vnode.html">
+            
+                    
+                    什么是虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="bind.html">
+            
+                <a href="bind.html">
+            
+                    
+                    Vue2双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="communication.html">
+            
+                <a href="communication.html">
+            
+                    
+                    Vue组件之间的通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="components_plugin.html">
+            
+                <a href="components_plugin.html">
+            
+                    
+                    Vue中组件和插件有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="data.html">
+            
+                <a href="data.html">
+            
+                    
+                    为什么data属性是一个函数而不是一个对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="data_object_add_attrs.html">
+            
+                <a href="data_object_add_attrs.html">
+            
+                    
+                    动态给vue的data添加一个新的属性时会发生什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="diff.html">
+            
+                <a href="diff.html">
+            
+                    
+                    Vue的diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    Vue自定义指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="keepalive.html">
+            
+                <a href="keepalive.html">
+            
+                    
+                    Vue中keep-alive的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="mixin.html">
+            
+                <a href="mixin.html">
+            
+                    
+                    Vue中mixin的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="spa.html">
+            
+                <a href="spa.html">
+            
+                    
+                    SPA单页面的理解以及它的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="ssr.html">
+            
+                <a href="ssr.html">
+            
+                    
+                    服务端渲染SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="new_vue.html">
+            
+                <a href="new_vue.html">
+            
+                    
+                    Vue实例挂载的过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="modifier.html">
+            
+                <a href="modifier.html">
+            
+                    
+                    Vue常用的修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="axios.html">
+            
+                <a href="axios.html">
+            
+                    
+                    Vue项目中对axios的封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="axiosCode.html">
+            
+                <a href="axiosCode.html">
+            
+                    
+                    对axios的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="slot.html">
+            
+                <a href="slot.html">
+            
+                    
+                    Vue中slot的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="show_if.html">
+            
+                <a href="show_if.html">
+            
+                    
+                    v-show和v-if有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="if_for.html">
+            
+                <a href="if_for.html">
+            
+                    
+                    v-if和v-for的优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="key.html">
+            
+                <a href="key.html">
+            
+                    
+                    Vue中key的原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="first_page_time.html">
+            
+                <a href="first_page_time.html">
+            
+                    
+                    如何解决SPA首屏加载速度慢
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    Vue中observable的了解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="nexttick.html">
+            
+                <a href="nexttick.html">
+            
+                    
+                    Vue中的$nextTick作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="lifecycle.html">
+            
+                <a href="lifecycle.html">
+            
+                    
+                    Vue生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    Vue项目的目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="permission.html">
+            
+                <a href="permission.html">
+            
+                    
+                    Vue项目中的权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="404.html">
+            
+                <a href="404.html">
+            
+                    
+                    Vue项目本地开发完成后部署到服务器后报404
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="cors.html">
+            
+                <a href="cors.html">
+            
+                    
+                    Vue项目如何解决跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.31" data-path="error.html">
+            
+                <a href="error.html">
+            
+                    
+                    怎么处理vue项目中的错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue3===</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../vue3/goal.html">
+            
+                <a href="../vue3/goal.html">
+            
+                    
+                    Vue的设计目标和做了那些优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../vue3/composition.html">
+            
+                <a href="../vue3/composition.html">
+            
+                    
+                    Vue3组合式api与vue2配置式api的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../vue3/performance.html">
+            
+                <a href="../vue3/performance.html">
+            
+                    
+                    Vue3的性能优化体现在哪几方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../vue3/proxy.html">
+            
+                <a href="../vue3/proxy.html">
+            
+                    
+                    Vue3为什么Proxy替代defineProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../vue3/treeshaking.html">
+            
+                <a href="../vue3/treeshaking.html">
+            
+                    
+                    Vue3中Treeshaking特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Webpack===</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../webpack/webpack.html">
+            
+                <a href="../webpack/webpack.html">
+            
+                    
+                    对webpack的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../webpack/HMR.html">
+            
+                <a href="../webpack/HMR.html">
+            
+                    
+                    webpack的热更新是如何做到的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../webpack/Loader.html">
+            
+                <a href="../webpack/Loader.html">
+            
+                    
+                    webpack中常见的Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../webpack/Loader_Plugin.html">
+            
+                <a href="../webpack/Loader_Plugin.html">
+            
+                    
+                    说说Loader和Plugin的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../webpack/Plugin.html">
+            
+                <a href="../webpack/Plugin.html">
+            
+                    
+                    webpack中常见的Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                <a href="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                    
+                    与webpack类似的工具还有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../webpack/build_process.html">
+            
+                <a href="../webpack/build_process.html">
+            
+                    
+                    webpack的构建流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../webpack/improve_build.html">
+            
+                <a href="../webpack/improve_build.html">
+            
+                    
+                    如何提高webpack的构建速度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../webpack/performance.html">
+            
+                <a href="../webpack/performance.html">
+            
+                    
+                    如何借助webpack来优化前端性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../webpack/proxy.html">
+            
+                <a href="../webpack/proxy.html">
+            
+                    
+                    webpack proxy工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >怎么处理vue项目中的错误</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9762;&#x8BD5;&#x5B98;&#xFF1A;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x5904;&#x7406;vue&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x7684;&#xFF1F;">&#x9762;&#x8BD5;&#x5B98;&#xFF1A;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x5904;&#x7406;vue&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x7684;&#xFF1F;</h1>
+<p> <img src="https://static.vue-js.com/3cafe4f0-4fd9-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<h2 id="&#x4E00;&#x3001;&#x9519;&#x8BEF;&#x7C7B;&#x578B;">&#x4E00;&#x3001;&#x9519;&#x8BEF;&#x7C7B;&#x578B;</h2>
+<p>&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x5BF9;&#x4E8E;&#x9519;&#x8BEF;&#x7684;&#x5904;&#x7406;&#x90FD;&#x662F;&#x4E00;&#x79CD;&#x5FC5;&#x5907;&#x7684;&#x80FD;&#x529B;</p>
+<p>&#x5728;<code>Vue</code> &#x4E2D;&#xFF0C;&#x5219;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5957;&#x5BF9;&#x5E94;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x89C4;&#x5219;&#x7ED9;&#x5230;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x4E14;&#x5728;&#x6E90;&#x4EE3;&#x7801;&#x7EA7;&#x522B;&#xFF0C;&#x5BF9;&#x90E8;&#x5206;&#x5FC5;&#x8981;&#x7684;&#x8FC7;&#x7A0B;&#x505A;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x7684;&#x9519;&#x8BEF;&#x6765;&#x6E90;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#x9519;&#x8BEF;</li>
+<li>&#x4EE3;&#x7801;&#x4E2D;&#x672C;&#x8EAB;&#x903B;&#x8F91;&#x9519;&#x8BEF;</li>
+</ul>
+<h2 id="&#x4E8C;&#x3001;&#x5982;&#x4F55;&#x5904;&#x7406;">&#x4E8C;&#x3001;&#x5982;&#x4F55;&#x5904;&#x7406;</h2>
+<h3 id="&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#x9519;&#x8BEF;">&#x540E;&#x7AEF;&#x63A5;&#x53E3;&#x9519;&#x8BEF;</h3>
+<p>&#x901A;&#x8FC7;<code>axios</code>&#x7684;<code>interceptor</code>&#x5B9E;&#x73B0;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;<code>response</code>&#x5148;&#x8FDB;&#x884C;&#x4E00;&#x5C42;&#x62E6;&#x622A;</p>
+<pre><code class="lang-js">apiClient.interceptors.response.use(
+  response =&gt; {
+    <span class="hljs-keyword">return</span> response;
+  },
+  error =&gt; {
+    <span class="hljs-keyword">if</span> (error.response.status == <span class="hljs-number">401</span>) {
+      router.push({ name: <span class="hljs-string">&quot;Login&quot;</span> });
+    } <span class="hljs-keyword">else</span> {
+      message.error(<span class="hljs-string">&quot;&#x51FA;&#x9519;&#x4E86;&quot;</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error);
+    }
+  }
+);
+</code></pre>
+<h3 id="&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x95EE;&#x9898;">&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x95EE;&#x9898;</h3>
+<h4 id="&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x9519;&#x8BEF;&#x5904;&#x7406;">&#x5168;&#x5C40;&#x8BBE;&#x7F6E;&#x9519;&#x8BEF;&#x5904;&#x7406;</h4>
+<p>&#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;</p>
+<pre><code class="lang-js">Vue.config.errorHandler = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, vm, info</span>) </span>{
+  <span class="hljs-comment">// handle error</span>
+  <span class="hljs-comment">// `info` &#x662F; Vue &#x7279;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x6BD4;&#x5982;&#x9519;&#x8BEF;&#x6240;&#x5728;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</span>
+  <span class="hljs-comment">// &#x53EA;&#x5728; 2.2.0+ &#x53EF;&#x7528;</span>
+}
+</code></pre>
+<p><code>errorHandler</code>&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;&#x6E32;&#x67D3;&#x548C;&#x89C2;&#x5BDF;&#x671F;&#x95F4;&#x672A;&#x6355;&#x83B7;&#x9519;&#x8BEF;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x4E2A;&#x5904;&#x7406;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x53EF;&#x83B7;&#x53D6;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x548C; <code>Vue</code> &#x5B9E;&#x4F8B;</p>
+<p>&#x4E0D;&#x8FC7;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x4E0D;&#x540C;<code>Vue</code> &#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8BE5;&#x5168;&#x5C40; <code>API</code> &#x4F5C;&#x7528;&#x7684;&#x8303;&#x56F4;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF1A;</p>
+<blockquote>
+<p>&#x4ECE; 2.2.0 &#x8D77;&#xFF0C;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x4E5F;&#x4F1A;&#x6355;&#x83B7;&#x7EC4;&#x4EF6;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x91CC;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5F53;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x662F; <code>undefined</code> &#x65F6;&#xFF0C;&#x88AB;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#x4F1A;&#x901A;&#x8FC7; <code>console.error</code> &#x8F93;&#x51FA;&#x800C;&#x907F;&#x514D;&#x5E94;&#x7528;&#x5D29;</p>
+<p>&#x4ECE; 2.4.0 &#x8D77;&#xFF0C;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x4E5F;&#x4F1A;&#x6355;&#x83B7; Vue &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;&#x9519;&#x8BEF;&#x4E86;</p>
+<p>&#x4ECE; 2.6.0 &#x8D77;&#xFF0C;&#x8FD9;&#x4E2A;&#x94A9;&#x5B50;&#x4E5F;&#x4F1A;&#x6355;&#x83B7; <code>v-on</code> DOM &#x76D1;&#x542C;&#x5668;&#x5185;&#x90E8;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x94A9;&#x5B50;&#x6216;&#x5904;&#x7406;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Promise &#x94FE; (&#x4F8B;&#x5982; async &#x51FD;&#x6570;)&#xFF0C;&#x5219;&#x6765;&#x81EA;&#x5176; Promise &#x94FE;&#x7684;&#x9519;&#x8BEF;&#x4E5F;&#x4F1A;&#x88AB;&#x5904;&#x7406;</p>
+</blockquote>
+<h4 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;">&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</h4>
+<p><code>errorCaptured</code>&#x662F; 2.5.0 &#x65B0;&#x589E;&#x7684;&#x4E00;&#x4E2A;&#x751F;&#x547D;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x6355;&#x83B7;&#x5230;&#x4E00;&#x4E2A;&#x6765;&#x81EA;&#x5B50;&#x5B59;&#x7EC4;&#x4EF6;&#x7684;&#x9519;&#x8BEF;&#x65F6;&#x88AB;&#x8C03;&#x7528;</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;</p>
+<pre><code class="lang-js">(err: <span class="hljs-built_in">Error</span>, vm: Component, info: string) =&gt; ?boolean
+</code></pre>
+<p>&#x6B64;&#x94A9;&#x5B50;&#x4F1A;&#x6536;&#x5230;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x9519;&#x8BEF;&#x5BF9;&#x8C61;&#x3001;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x9519;&#x8BEF;&#x6765;&#x6E90;&#x4FE1;&#x606F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x6B64;&#x94A9;&#x5B50;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE; <code>false</code> &#x4EE5;&#x963B;&#x6B62;&#x8BE5;&#x9519;&#x8BEF;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x4F20;&#x64AD;</p>
+<p>&#x53C2;&#x8003;&#x5B98;&#x7F51;&#xFF0C;&#x9519;&#x8BEF;&#x4F20;&#x64AD;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x5168;&#x5C40;&#x7684; <code>config.errorHandler</code> &#x88AB;&#x5B9A;&#x4E49;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x9519;&#x8BEF;&#x4ECD;&#x4F1A;&#x53D1;&#x9001;&#x5B83;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x4E9B;&#x9519;&#x8BEF;&#x4ECD;&#x7136;&#x4F1A;&#x5411;&#x5355;&#x4E00;&#x7684;&#x5206;&#x6790;&#x670D;&#x52A1;&#x7684;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x6C47;&#x62A5;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x7EE7;&#x627F;&#x6216;&#x7236;&#x7EA7;&#x4ECE;&#x5C5E;&#x94FE;&#x8DEF;&#x4E2D;&#x5B58;&#x5728;&#x591A;&#x4E2A; <code>errorCaptured</code> &#x94A9;&#x5B50;&#xFF0C;&#x5219;&#x5B83;&#x4EEC;&#x5C06;&#x4F1A;&#x88AB;&#x76F8;&#x540C;&#x7684;&#x9519;&#x8BEF;&#x9010;&#x4E2A;&#x5524;&#x8D77;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6B64; <code>errorCaptured</code> &#x94A9;&#x5B50;&#x81EA;&#x8EAB;&#x629B;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x5219;&#x8FD9;&#x4E2A;&#x65B0;&#x9519;&#x8BEF;&#x548C;&#x539F;&#x672C;&#x88AB;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#x90FD;&#x4F1A;&#x53D1;&#x9001;&#x7ED9;&#x5168;&#x5C40;&#x7684; <code>config.errorHandler</code></li>
+<li>&#x4E00;&#x4E2A; <code>errorCaptured</code> &#x94A9;&#x5B50;&#x80FD;&#x591F;&#x8FD4;&#x56DE; <code>false</code> &#x4EE5;&#x963B;&#x6B62;&#x9519;&#x8BEF;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x4F20;&#x64AD;&#x3002;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x8BF4;&#x201C;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x5DF2;&#x7ECF;&#x88AB;&#x641E;&#x5B9A;&#x4E86;&#x4E14;&#x5E94;&#x8BE5;&#x88AB;&#x5FFD;&#x7565;&#x201D;&#x3002;&#x5B83;&#x4F1A;&#x963B;&#x6B62;&#x5176;&#x5B83;&#x4EFB;&#x4F55;&#x4F1A;&#x88AB;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x5524;&#x8D77;&#x7684; <code>errorCaptured</code> &#x94A9;&#x5B50;&#x548C;&#x5168;&#x5C40;&#x7684; <code>config.errorHandler</code></li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x4E2A;&#x4F8B;&#x5B50;</p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7236;&#x7EC4;&#x4EF6;<code>cat</code></p>
+<pre><code class="lang-js">Vue.component(<span class="hljs-string">&apos;cat&apos;</span>, {
+    template:<span class="hljs-string">`
+        &lt;div&gt;
+            &lt;h1&gt;Cat: &lt;/h1&gt;
+            &lt;slot&gt;&lt;/slot&gt;
+        &lt;/div&gt;`</span>,
+    props:{
+        name:{
+            required:<span class="hljs-literal">true</span>,
+            type:<span class="hljs-built_in">String</span>
+        }
+    },
+    errorCaptured(err,vm,info) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`cat EC: <span class="hljs-subst">${err.toString()}</span>\ninfo: <span class="hljs-subst">${info}</span>`</span>); 
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+});
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5B50;&#x7EC4;&#x4EF6;<code>kitten</code>&#xFF0C;&#x5176;&#x4E2D;<code>dontexist()</code>&#x5E76;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#xFF0C;&#x5B58;&#x5728;&#x9519;&#x8BEF;</p>
+<pre><code class="lang-js">Vue.component(<span class="hljs-string">&apos;kitten&apos;</span>, {
+    template:<span class="hljs-string">&apos;&lt;div&gt;&lt;h1&gt;Kitten: &lt;/h1&gt;&lt;/div&gt;&apos;</span>,
+    props:{
+        name:{
+            required:<span class="hljs-literal">true</span>,
+            type:<span class="hljs-built_in">String</span>
+        }
+    }
+});
+</code></pre>
+<p>&#x9875;&#x9762;&#x4E2D;&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span> <span class="hljs-attr">v-cloak</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">cat</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;my cat&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">kitten</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">kitten</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">cat</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x7684;<code>errorCaptured</code>&#x5219;&#x80FD;&#x591F;&#x6355;&#x83B7;&#x5230;&#x4FE1;&#x606F;</p>
+<pre><code class="lang-js">cat EC: <span class="hljs-built_in">TypeError</span>: dontexist is not a <span class="hljs-function"><span class="hljs-keyword">function</span>
+<span class="hljs-title">info</span>: <span class="hljs-title">render</span>
+</span></code></pre>
+<h3 id="&#x4E09;&#x3001;&#x6E90;&#x7801;&#x5206;&#x6790;">&#x4E09;&#x3001;&#x6E90;&#x7801;&#x5206;&#x6790;</h3>
+<p>&#x5F02;&#x5E38;&#x5904;&#x7406;&#x6E90;&#x7801;</p>
+<p>&#x6E90;&#x7801;&#x4F4D;&#x7F6E;&#xFF1A;/src/core/util/error.js</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Vue &#x5168;&#x5C40;&#x914D;&#x7F6E;,&#x4E5F;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x7684;Vue.config</span>
+<span class="hljs-keyword">import</span> config <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../config&apos;</span>
+<span class="hljs-keyword">import</span> { warn } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./debug&apos;</span>
+<span class="hljs-comment">// &#x5224;&#x65AD;&#x73AF;&#x5883;</span>
+<span class="hljs-keyword">import</span> { inBrowser, inWeex } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./env&apos;</span>
+<span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;Promise&#xFF0C;&#x901A;&#x8FC7;val.then === &apos;function&apos; &amp;&amp; val.catch === &apos;function&apos;, val &#xFF01;=== null &amp;&amp; val !== undefined</span>
+<span class="hljs-keyword">import</span> { isPromise } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;shared/util&apos;</span>
+<span class="hljs-comment">// &#x5F53;&#x9519;&#x8BEF;&#x51FD;&#x6570;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x505C;&#x7528;deps&#x8DDF;&#x8E2A;&#x4EE5;&#x907F;&#x514D;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;infinite rendering</span>
+<span class="hljs-comment">// &#x89E3;&#x51B3;&#x4EE5;&#x4E0B;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;https://github.com/vuejs/vuex/issues/1505&#x7684;&#x95EE;&#x9898;</span>
+<span class="hljs-keyword">import</span> { pushTarget, popTarget } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../observer/dep&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleError</span> (<span class="hljs-params">err: Error, vm: any, info: string</span>) </span>{
+    <span class="hljs-comment">// Deactivate deps tracking while processing error handler to avoid possible infinite rendering.</span>
+    pushTarget()
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// vm&#x6307;&#x5F53;&#x524D;&#x62A5;&#x9519;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</span>
+        <span class="hljs-keyword">if</span> (vm) {
+            <span class="hljs-keyword">let</span> cur = vm
+            <span class="hljs-comment">// &#x9996;&#x5148;&#x83B7;&#x53D6;&#x5230;&#x62A5;&#x9519;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x9012;&#x5F52;&#x67E5;&#x627E;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;errorCaptured &#x65B9;&#x6CD5;&#x3002;</span>
+            <span class="hljs-comment">// &#x5728;&#x904D;&#x5386;&#x8C03;&#x7528;&#x5B8C;&#x6240;&#x6709; errorCaptured &#x65B9;&#x6CD5;&#x3001;&#x6216; errorCaptured &#x65B9;&#x6CD5;&#x6709;&#x62A5;&#x9519;&#x65F6;&#xFF0C;&#x8C03;&#x7528; globalHandleError &#x65B9;&#x6CD5;</span>
+            <span class="hljs-keyword">while</span> ((cur = cur.$parent)) {
+                <span class="hljs-keyword">const</span> hooks = cur.$options.errorCaptured
+                <span class="hljs-comment">// &#x5224;&#x65AD;&#x662F;&#x5426;&#x5B58;&#x5728;errorCaptured&#x94A9;&#x5B50;&#x51FD;&#x6570;</span>
+                <span class="hljs-keyword">if</span> (hooks) {
+                    <span class="hljs-comment">// &#x9009;&#x9879;&#x5408;&#x5E76;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;</span>
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; hooks.length; i++) {
+                        <span class="hljs-comment">// &#x5982;&#x679C;errorCaptured &#x94A9;&#x5B50;&#x6267;&#x884C;&#x81EA;&#x8EAB;&#x629B;&#x51FA;&#x4E86;&#x9519;&#x8BEF;&#xFF0C;</span>
+                        <span class="hljs-comment">// &#x5219;&#x7528;try{}catch{}&#x6355;&#x83B7;&#x9519;&#x8BEF;&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x65B0;&#x9519;&#x8BEF;&#x548C;&#x539F;&#x672C;&#x88AB;&#x6355;&#x83B7;&#x7684;&#x9519;&#x8BEF;&#x90FD;&#x4F1A;&#x53D1;&#x9001;&#x7ED9;&#x5168;&#x5C40;&#x7684;config.errorHandler</span>
+                        <span class="hljs-comment">// &#x8C03;&#x7528;globalHandleError&#x65B9;&#x6CD5;</span>
+                        <span class="hljs-keyword">try</span> {
+                            <span class="hljs-comment">// &#x5F53;&#x524D;errorCaptured&#x6267;&#x884C;&#xFF0C;&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x662F;&#x5426;&#x662F;false&#x503C;</span>
+                            <span class="hljs-comment">// &#x662F;false&#xFF0C;capture = true&#xFF0C;&#x963B;&#x6B62;&#x5176;&#x5B83;&#x4EFB;&#x4F55;&#x4F1A;&#x88AB;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x5524;&#x8D77;&#x7684; errorCaptured &#x94A9;&#x5B50;&#x548C;&#x5168;&#x5C40;&#x7684; config.errorHandler</span>
+                            <span class="hljs-comment">// &#x662F;true capture = fale&#xFF0C;&#x7EC4;&#x4EF6;&#x7684;&#x7EE7;&#x627F;&#x6216;&#x7236;&#x7EA7;&#x4ECE;&#x5C5E;&#x94FE;&#x8DEF;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x591A;&#x4E2A; errorCaptured &#x94A9;&#x5B50;&#xFF0C;&#x4F1A;&#x88AB;&#x76F8;&#x540C;&#x7684;&#x9519;&#x8BEF;&#x9010;&#x4E2A;&#x5524;&#x8D77;</span>
+                            <span class="hljs-comment">// &#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x5904;&#x7406;&#x9519;&#x8BEF;</span>
+                            <span class="hljs-keyword">const</span> capture = hooks[i].call(cur, err, vm, info) === <span class="hljs-literal">false</span>
+                            <span class="hljs-keyword">if</span> (capture) <span class="hljs-keyword">return</span>
+                        } <span class="hljs-keyword">catch</span> (e) {
+                            globalHandleError(e, cur, <span class="hljs-string">&apos;errorCaptured hook&apos;</span>)
+                        }
+                    }
+                }
+            }
+        }
+        <span class="hljs-comment">// &#x9664;&#x975E;&#x7981;&#x6B62;&#x9519;&#x8BEF;&#x5411;&#x4E0A;&#x4F20;&#x64AD;&#xFF0C;&#x5426;&#x5219;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x5168;&#x5C40;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+        globalHandleError(err, vm, info)
+    } <span class="hljs-keyword">finally</span> {
+        popTarget()
+    }
+}
+<span class="hljs-comment">// &#x5F02;&#x6B65;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invokeWithErrorHandling</span> (<span class="hljs-params">
+handler: Function,
+ context: any,
+ args: null | any[],
+    vm: any,
+        info: string
+        </span>) </span>{
+            <span class="hljs-keyword">let</span> res
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-comment">// &#x6839;&#x636E;&#x53C2;&#x6570;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;handle&#x6267;&#x884C;&#x65B9;&#x5F0F;</span>
+                res = args ? handler.apply(context, args) : handler.call(context)
+                <span class="hljs-comment">// handle&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x5B58;&#x5728;</span>
+                <span class="hljs-comment">// res._isVue an flag to avoid this being observed&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x5165;&#x503C;&#x7684;_isVue&#x4E3A;ture&#x65F6;(&#x5373;&#x4F20;&#x5165;&#x7684;&#x503C;&#x662F;Vue&#x5B9E;&#x4F8B;&#x672C;&#x8EAB;)&#x4E0D;&#x4F1A;&#x65B0;&#x5EFA;observer&#x5B9E;&#x4F8B;</span>
+                <span class="hljs-comment">// isPromise(res) &#x5224;&#x65AD;val.then === &apos;function&apos; &amp;&amp; val.catch === &apos;function&apos;, val &#xFF01;=== null &amp;&amp; val !== undefined</span>
+                <span class="hljs-comment">// !res._handled  _handle&#x662F;Promise &#x5B9E;&#x4F8B;&#x7684;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x4E4B;&#x4E00;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;false&#xFF0C;&#x4EE3;&#x8868;onFulfilled,onRejected&#x662F;&#x5426;&#x88AB;&#x5904;&#x7406;</span>
+                <span class="hljs-keyword">if</span> (res &amp;&amp; !res._isVue &amp;&amp; isPromise(res) &amp;&amp; !res._handled) {
+                    res.catch(e =&gt; handleError(e, vm, info + <span class="hljs-string">` (Promise/async)`</span>))
+                    <span class="hljs-comment">// avoid catch triggering multiple times when nested calls</span>
+                    <span class="hljs-comment">// &#x907F;&#x514D;&#x5D4C;&#x5957;&#x8C03;&#x7528;&#x65F6;catch&#x591A;&#x6B21;&#x7684;&#x89E6;&#x53D1;</span>
+                    res._handled = <span class="hljs-literal">true</span>
+                }
+            } <span class="hljs-keyword">catch</span> (e) {
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x6267;&#x884C;&#x9519;&#x8BEF;</span>
+                handleError(e, vm, info)
+            }
+            <span class="hljs-keyword">return</span> res
+        }
+
+<span class="hljs-comment">//&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x5904;&#x7406;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">globalHandleError</span> (<span class="hljs-params">err, vm, info</span>) </span>{
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;undefined</span>
+    <span class="hljs-comment">// &#x5DF2;&#x914D;&#x7F6E;</span>
+    <span class="hljs-keyword">if</span> (config.errorHandler) {
+        <span class="hljs-comment">// try{}catch{} &#x4F4F;&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;</span>
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// &#x6267;&#x884C;&#x8BBE;&#x7F6E;&#x7684;&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;handle error &#x60F3;&#x5E72;&#x5565;&#x5C31;&#x5E72;&#x5565;&#x1F497;</span>
+            <span class="hljs-keyword">return</span> config.errorHandler.call(<span class="hljs-literal">null</span>, err, vm, info)
+        } <span class="hljs-keyword">catch</span> (e) {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x5728;errorHandler&#x51FD;&#x6570;&#x4E2D;&#x624B;&#x52A8;&#x629B;&#x51FA;&#x540C;&#x6837;&#x9519;&#x8BEF;&#x4FE1;&#x606F;throw err</span>
+            <span class="hljs-comment">// &#x5224;&#x65AD;err&#x4FE1;&#x606F;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF0C;&#x907F;&#x514D;log&#x4E24;&#x6B21;</span>
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x629B;&#x51FA;&#x65B0;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;throw err Error(&apos;&#x4F60;&#x597D;&#x6BD2;&apos;)&#xFF0C;&#x5C06;&#x4F1A;&#x4E00;&#x8D77;log&#x8F93;&#x51FA;</span>
+            <span class="hljs-keyword">if</span> (e !== err) {
+                logError(e, <span class="hljs-literal">null</span>, <span class="hljs-string">&apos;config.errorHandler&apos;</span>)
+            }
+        }
+    }
+    <span class="hljs-comment">// &#x672A;&#x914D;&#x7F6E;&#x5E38;&#x89C4;log&#x8F93;&#x51FA;</span>
+    logError(err, vm, info)
+}
+
+<span class="hljs-comment">// &#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x51FD;&#x6570;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logError</span> (<span class="hljs-params">err, vm, info</span>) </span>{
+    <span class="hljs-keyword">if</span> (process.env.NODE_ENV !== <span class="hljs-string">&apos;production&apos;</span>) {
+        warn(<span class="hljs-string">`Error in <span class="hljs-subst">${info}</span>: &quot;<span class="hljs-subst">${err.toString()}</span>&quot;`</span>, vm)
+    }
+    <span class="hljs-comment">/* istanbul ignore else */</span>
+    <span class="hljs-keyword">if</span> ((inBrowser || inWeex) &amp;&amp; <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">console</span> !== <span class="hljs-string">&apos;undefined&apos;</span>) {
+        <span class="hljs-built_in">console</span>.error(err)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> err
+    }
+}
+</code></pre>
+<h3 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><code>handleError</code>&#x5728;&#x9700;&#x8981;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x7684;&#x5730;&#x65B9;&#x8C03;&#x7528;&#xFF0C;&#x9996;&#x5148;&#x83B7;&#x53D6;&#x5230;&#x62A5;&#x9519;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x9012;&#x5F52;&#x67E5;&#x627E;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;<code>errorCaptured</code> &#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x904D;&#x5386;&#x8C03;&#x7528;&#x5B8C;&#x6240;&#x6709; <code>errorCaptured</code> &#x65B9;&#x6CD5;&#x6216; <code>errorCaptured</code> &#x65B9;&#x6CD5;&#x6709;&#x62A5;&#x9519;&#x65F6;&#xFF0C;&#x8C03;&#x7528; <code>globalHandleError</code> &#x65B9;&#x6CD5;</li>
+<li><code>globalHandleError</code>&#x8C03;&#x7528;&#x5168;&#x5C40;&#x7684; <code>errorHandler</code> &#x65B9;&#x6CD5;&#xFF0C;&#x518D;&#x901A;&#x8FC7;<code>logError</code>&#x5224;&#x65AD;&#x73AF;&#x5883;&#x8F93;&#x51FA;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</li>
+<li><code>invokeWithErrorHandling</code>&#x66F4;&#x597D;&#x7684;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</li>
+<li><code>logError</code>&#x5224;&#x65AD;&#x73AF;&#x5883;&#xFF0C;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x629B;&#x9519;&#x65B9;&#x5F0F;&#x3002;&#x975E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x8C03;&#x7528;<code>warn</code>&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x9519;&#x8BEF;</li>
+</ul>
+<footer class="page-footer"><span class="copyright">2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-06-18 18:15:31
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="cors.html" class="navigation navigation-prev " aria-label="Previous page: Vue项目如何解决跨域">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../vue3/goal.html" class="navigation navigation-next " aria-label="Next page: Vue的设计目标和做了那些优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"怎么处理vue项目中的错误","level":"6.31","depth":1,"next":{"title":"Vue的设计目标和做了那些优化","level":"7.1","depth":1,"path":"vue3/goal.md","ref":"vue3/goal.md","articles":[]},"previous":{"title":"Vue项目如何解决跨域","level":"6.30","depth":1,"path":"vue/cors.md","ref":"vue/cors.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","splitter","expandable-chapters-small","-copy-code-button","code","tbfed-pagefooter","advanced-emoji","-sharing","sharing-plus","-lunr","-search","search-plus","theme-comscore"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":1},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"dunn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"information.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"面试宝典","language":"zh-hans","gitbook":"*","description":"面试常见问题等"},"file":{"path":"vue/error.md","mtime":"2021-06-18T10:15:31.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-18T10:36:40.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

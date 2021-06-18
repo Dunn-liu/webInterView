@@ -1,0 +1,2039 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>设备像素、css像素、设备独立像素、dpr、ppi 之间的区别 · 面试宝典</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="dunn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="em_px_rem_vh_vw.html" />
+    
+    
+    <link rel="prev" href="css_performance.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../es6/array.html">
+            
+                <a href="../es6/array.html">
+            
+                    
+                    数组新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../es6/function.html">
+            
+                <a href="../es6/function.html">
+            
+                    
+                    函数新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../es6/object.html">
+            
+                <a href="../es6/object.html">
+            
+                    
+                    对象新增了那些扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../es6/decorator.html">
+            
+                <a href="../es6/decorator.html">
+            
+                    
+                    ES6中装饰器 Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../es6/generator.html">
+            
+                <a href="../es6/generator.html">
+            
+                    
+                    ES6中Generator函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../es6/module.html">
+            
+                <a href="../es6/module.html">
+            
+                    
+                    ES6中Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../es6/promise.html">
+            
+                <a href="../es6/promise.html">
+            
+                    
+                    ES6中的promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../es6/proxy.html">
+            
+                <a href="../es6/proxy.html">
+            
+                    
+                    ES6中的Proxy与使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../es6/set_map.html">
+            
+                <a href="../es6/set_map.html">
+            
+                    
+                    ES6新增Set、Map两种数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../es6/var_let_const.html">
+            
+                <a href="../es6/var_let_const.html">
+            
+                    
+                    var、let、const之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===JavaScript===</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../JavaScript/== _===.html">
+            
+                <a href="../JavaScript/== _===.html">
+            
+                    
+                    == 和 ===区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../JavaScript/BOM.html">
+            
+                <a href="../JavaScript/BOM.html">
+            
+                    
+                    BOM理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../JavaScript/Dom.html">
+            
+                <a href="../JavaScript/Dom.html">
+            
+                    
+                    Dom理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../JavaScript/ajax.html">
+            
+                <a href="../JavaScript/ajax.html">
+            
+                    
+                    Ajax原理与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../JavaScript/array_api.html">
+            
+                <a href="../JavaScript/array_api.html">
+            
+                    
+                    数组常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../JavaScript/bind_call_apply.html">
+            
+                <a href="../JavaScript/bind_call_apply.html">
+            
+                    
+                    Bind Call Apply 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../JavaScript/cache.html">
+            
+                <a href="../JavaScript/cache.html">
+            
+                    
+                    Javascript本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../JavaScript/closure.html">
+            
+                <a href="../JavaScript/closure.html">
+            
+                    
+                    闭包的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../JavaScript/context_stack.html">
+            
+                <a href="../JavaScript/context_stack.html">
+            
+                    
+                    执行上下文和执行栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../JavaScript/continue_to_upload.html">
+            
+                <a href="../JavaScript/continue_to_upload.html">
+            
+                    
+                    大文件上传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../JavaScript/copy.html">
+            
+                <a href="../JavaScript/copy.html">
+            
+                    
+                    深拷贝浅拷贝的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../JavaScript/data_type.html">
+            
+                <a href="../JavaScript/data_type.html">
+            
+                    
+                    js数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../JavaScript/debounce_throttle.html">
+            
+                <a href="../JavaScript/debounce_throttle.html">
+            
+                    
+                    函数的防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../JavaScript/event_Model.html">
+            
+                <a href="../JavaScript/event_Model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../JavaScript/event_agent.html">
+            
+                <a href="../JavaScript/event_agent.html">
+            
+                    
+                    事件代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../JavaScript/event_loop.html">
+            
+                <a href="../JavaScript/event_loop.html">
+            
+                    
+                    事件循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../JavaScript/function_cache.html">
+            
+                <a href="../JavaScript/function_cache.html">
+            
+                    
+                    函数缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../JavaScript/functional_programming.html">
+            
+                <a href="../JavaScript/functional_programming.html">
+            
+                    
+                    函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../JavaScript/inherit.html">
+            
+                <a href="../JavaScript/inherit.html">
+            
+                    
+                    js继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../JavaScript/loss_accuracy.html">
+            
+                <a href="../JavaScript/loss_accuracy.html">
+            
+                    
+                    Javascript 数字精度丢失
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../JavaScript/memory_leak.html">
+            
+                <a href="../JavaScript/memory_leak.html">
+            
+                    
+                    js内存泄露
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../JavaScript/new.html">
+            
+                <a href="../JavaScript/new.html">
+            
+                    
+                    new操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../JavaScript/prototype.html">
+            
+                <a href="../JavaScript/prototype.html">
+            
+                    
+                    原型和原型链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                <a href="../JavaScript/pull_up_loading_pull_down_refresh.html">
+            
+                    
+                    如何实现上拉加载，下拉刷新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../JavaScript/regexp.html">
+            
+                <a href="../JavaScript/regexp.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../JavaScript/scope.html">
+            
+                <a href="../JavaScript/scope.html">
+            
+                    
+                    作用域链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../JavaScript/security.html">
+            
+                <a href="../JavaScript/security.html">
+            
+                    
+                    web常见的攻击方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../JavaScript/single_sign.html">
+            
+                <a href="../JavaScript/single_sign.html">
+            
+                    
+                    实现单点登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../JavaScript/string_api.html">
+            
+                <a href="../JavaScript/string_api.html">
+            
+                    
+                    字符串的常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../JavaScript/tail_recursion.html">
+            
+                <a href="../JavaScript/tail_recursion.html">
+            
+                    
+                    对尾递归的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../JavaScript/this.html">
+            
+                <a href="../JavaScript/this.html">
+            
+                    
+                    this对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../JavaScript/type_conversion.html">
+            
+                <a href="../JavaScript/type_conversion.html">
+            
+                    
+                    JavaScript 中的类型转换机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../JavaScript/typeof_instanceof.html">
+            
+                <a href="../JavaScript/typeof_instanceof.html">
+            
+                    
+                    typeof 与 instanceof 区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../JavaScript/visible.html">
+            
+                <a href="../JavaScript/visible.html">
+            
+                    
+                    元素是否在可视区域中
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===CSS===</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="BFC.html">
+            
+                <a href="BFC.html">
+            
+                    
+                    对BFC的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="animation.html">
+            
+                <a href="animation.html">
+            
+                    
+                    css3动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="box.html">
+            
+                <a href="box.html">
+            
+                    
+                    对盒子模型的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="center.html">
+            
+                <a href="center.html">
+            
+                    
+                    元素水平垂直居中的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="column_layout.html">
+            
+                <a href="column_layout.html">
+            
+                    
+                    实现两栏,三栏布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="css3_features.html">
+            
+                <a href="css3_features.html">
+            
+                    
+                    CSS3新增特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="css_performance.html">
+            
+                <a href="css_performance.html">
+            
+                    
+                    CSS提高性能的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.8" data-path="dp_px_dpr_ppi.html">
+            
+                <a href="dp_px_dpr_ppi.html">
+            
+                    
+                    设备像素、css像素、设备独立像素、dpr、ppi 之间的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="em_px_rem_vh_vw.html">
+            
+                <a href="em_px_rem_vh_vw.html">
+            
+                    
+                    em/px/rem/vh/vw区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="flexbox.html">
+            
+                <a href="flexbox.html">
+            
+                    
+                    弹性盒布局模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="grid.html">
+            
+                <a href="grid.html">
+            
+                    
+                    grid网格布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="hide_attributes.html">
+            
+                <a href="hide_attributes.html">
+            
+                    
+                    css隐藏页面元素方式,区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="layout_painting.html">
+            
+                <a href="layout_painting.html">
+            
+                    
+                    回流跟重绘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="less_12px.html">
+            
+                <a href="less_12px.html">
+            
+                    
+                    让Chrome支持小于12px 的文字方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="responsive_layout.html">
+            
+                <a href="responsive_layout.html">
+            
+                    
+                    响应式设计的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="sass_less_stylus.html">
+            
+                <a href="sass_less_stylus.html">
+            
+                    
+                    Css预编语言的理解与区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="selector.html">
+            
+                <a href="selector.html">
+            
+                    
+                    css选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.18" data-path="single_multi_line.html">
+            
+                <a href="single_multi_line.html">
+            
+                    
+                    实现单行／多行文本溢出省略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.19" data-path="triangle.html">
+            
+                <a href="triangle.html">
+            
+                    
+                    CSS如何画一个三角形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.20" data-path="visual_scrolling.html">
+            
+                <a href="visual_scrolling.html">
+            
+                    
+                    使用css完成视差滚动效果
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===HTTP===</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../http/1.0_1.1_2.0.html">
+            
+                <a href="../http/1.0_1.1_2.0.html">
+            
+                    
+                    HTTP1.0/1.1/2.0 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../http/CDN.html">
+            
+                <a href="../http/CDN.html">
+            
+                    
+                    如何理解CDN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../http/DNS.html">
+            
+                <a href="../http/DNS.html">
+            
+                    
+                    DNS 完整的查询过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../http/GET_POST.html">
+            
+                <a href="../http/GET_POST.html">
+            
+                    
+                    GET和POST区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../http/HTTPS.html">
+            
+                <a href="../http/HTTPS.html">
+            
+                    
+                    HTTPS是如何保证安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../http/HTTP_HTTPS.html">
+            
+                <a href="../http/HTTP_HTTPS.html">
+            
+                    
+                    HTTP 和 HTTPS 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../http/OSI.html">
+            
+                <a href="../http/OSI.html">
+            
+                    
+                    理解OSI七层模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../http/TCP_IP.html">
+            
+                <a href="../http/TCP_IP.html">
+            
+                    
+                    理解TCP/IP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../http/UDP_TCP.html">
+            
+                <a href="../http/UDP_TCP.html">
+            
+                    
+                    UDP 和 TCP的区别和应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../http/WebSocket.html">
+            
+                <a href="../http/WebSocket.html">
+            
+                    
+                    对WebSocket的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../http/after_url.html">
+            
+                <a href="../http/after_url.html">
+            
+                    
+                    地址栏输入 URL 敲下回车后发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../http/handshakes_waves.html">
+            
+                <a href="../http/handshakes_waves.html">
+            
+                    
+                    TCP为什么需要三次握手和四次挥手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../http/headers.html">
+            
+                <a href="../http/headers.html">
+            
+                    
+                    TTP 常见的请求头有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../http/status.html">
+            
+                <a href="../http/status.html">
+            
+                    
+                    HTTP 常见的状态码有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===NodeJS===</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../nodeJS/fs.html">
+            
+                <a href="../nodeJS/fs.html">
+            
+                    
+                    Node 中的 fs模块的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../nodeJS/global.html">
+            
+                <a href="../nodeJS/global.html">
+            
+                    
+                    Node. js 有哪些全局对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../nodeJS/nodejs.html">
+            
+                <a href="../nodeJS/nodejs.html">
+            
+                    
+                    Node.js 的理解？优缺点？应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../nodeJS/process.html">
+            
+                <a href="../nodeJS/process.html">
+            
+                    
+                    Node 中的 process 的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue===</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../vue/vue.html">
+            
+                <a href="../vue/vue.html">
+            
+                    
+                    对Vue的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../vue/vue3_vue2.html">
+            
+                <a href="../vue/vue3_vue2.html">
+            
+                    
+                    Vue2和vue3的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../vue/vnode.html">
+            
+                <a href="../vue/vnode.html">
+            
+                    
+                    什么是虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../vue/bind.html">
+            
+                <a href="../vue/bind.html">
+            
+                    
+                    Vue2双向数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../vue/communication.html">
+            
+                <a href="../vue/communication.html">
+            
+                    
+                    Vue组件之间的通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../vue/components_plugin.html">
+            
+                <a href="../vue/components_plugin.html">
+            
+                    
+                    Vue中组件和插件有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../vue/data.html">
+            
+                <a href="../vue/data.html">
+            
+                    
+                    为什么data属性是一个函数而不是一个对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="../vue/data_object_add_attrs.html">
+            
+                <a href="../vue/data_object_add_attrs.html">
+            
+                    
+                    动态给vue的data添加一个新的属性时会发生什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="../vue/diff.html">
+            
+                <a href="../vue/diff.html">
+            
+                    
+                    Vue的diff算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="../vue/directive.html">
+            
+                <a href="../vue/directive.html">
+            
+                    
+                    Vue自定义指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="../vue/keepalive.html">
+            
+                <a href="../vue/keepalive.html">
+            
+                    
+                    Vue中keep-alive的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="../vue/mixin.html">
+            
+                <a href="../vue/mixin.html">
+            
+                    
+                    Vue中mixin的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="../vue/spa.html">
+            
+                <a href="../vue/spa.html">
+            
+                    
+                    SPA单页面的理解以及它的优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="../vue/ssr.html">
+            
+                <a href="../vue/ssr.html">
+            
+                    
+                    服务端渲染SSR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.15" data-path="../vue/new_vue.html">
+            
+                <a href="../vue/new_vue.html">
+            
+                    
+                    Vue实例挂载的过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.16" data-path="../vue/modifier.html">
+            
+                <a href="../vue/modifier.html">
+            
+                    
+                    Vue常用的修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.17" data-path="../vue/axios.html">
+            
+                <a href="../vue/axios.html">
+            
+                    
+                    Vue项目中对axios的封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.18" data-path="../vue/axiosCode.html">
+            
+                <a href="../vue/axiosCode.html">
+            
+                    
+                    对axios的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.19" data-path="../vue/slot.html">
+            
+                <a href="../vue/slot.html">
+            
+                    
+                    Vue中slot的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.20" data-path="../vue/show_if.html">
+            
+                <a href="../vue/show_if.html">
+            
+                    
+                    v-show和v-if有什么区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.21" data-path="../vue/if_for.html">
+            
+                <a href="../vue/if_for.html">
+            
+                    
+                    v-if和v-for的优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.22" data-path="../vue/key.html">
+            
+                <a href="../vue/key.html">
+            
+                    
+                    Vue中key的原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.23" data-path="../vue/first_page_time.html">
+            
+                <a href="../vue/first_page_time.html">
+            
+                    
+                    如何解决SPA首屏加载速度慢
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.24" data-path="../vue/observable.html">
+            
+                <a href="../vue/observable.html">
+            
+                    
+                    Vue中observable的了解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.25" data-path="../vue/nexttick.html">
+            
+                <a href="../vue/nexttick.html">
+            
+                    
+                    Vue中的$nextTick作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.26" data-path="../vue/lifecycle.html">
+            
+                <a href="../vue/lifecycle.html">
+            
+                    
+                    Vue生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.27" data-path="../vue/structure.html">
+            
+                <a href="../vue/structure.html">
+            
+                    
+                    Vue项目的目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.28" data-path="../vue/permission.html">
+            
+                <a href="../vue/permission.html">
+            
+                    
+                    Vue项目中的权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.29" data-path="../vue/404.html">
+            
+                <a href="../vue/404.html">
+            
+                    
+                    Vue项目本地开发完成后部署到服务器后报404
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.30" data-path="../vue/cors.html">
+            
+                <a href="../vue/cors.html">
+            
+                    
+                    Vue项目如何解决跨域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.31" data-path="../vue/error.html">
+            
+                <a href="../vue/error.html">
+            
+                    
+                    怎么处理vue项目中的错误
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Vue3===</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../vue3/goal.html">
+            
+                <a href="../vue3/goal.html">
+            
+                    
+                    Vue的设计目标和做了那些优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../vue3/composition.html">
+            
+                <a href="../vue3/composition.html">
+            
+                    
+                    Vue3组合式api与vue2配置式api的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../vue3/performance.html">
+            
+                <a href="../vue3/performance.html">
+            
+                    
+                    Vue3的性能优化体现在哪几方面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../vue3/proxy.html">
+            
+                <a href="../vue3/proxy.html">
+            
+                    
+                    Vue3为什么Proxy替代defineProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../vue3/treeshaking.html">
+            
+                <a href="../vue3/treeshaking.html">
+            
+                    
+                    Vue3中Treeshaking特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">===Webpack===</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../webpack/webpack.html">
+            
+                <a href="../webpack/webpack.html">
+            
+                    
+                    对webpack的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../webpack/HMR.html">
+            
+                <a href="../webpack/HMR.html">
+            
+                    
+                    webpack的热更新是如何做到的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../webpack/Loader.html">
+            
+                <a href="../webpack/Loader.html">
+            
+                    
+                    webpack中常见的Loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../webpack/Loader_Plugin.html">
+            
+                <a href="../webpack/Loader_Plugin.html">
+            
+                    
+                    说说Loader和Plugin的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../webpack/Plugin.html">
+            
+                <a href="../webpack/Plugin.html">
+            
+                    
+                    webpack中常见的Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                <a href="../webpack/Rollup_Parcel_snowpack_Vite.html">
+            
+                    
+                    与webpack类似的工具还有哪些
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="../webpack/build_process.html">
+            
+                <a href="../webpack/build_process.html">
+            
+                    
+                    webpack的构建流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="../webpack/improve_build.html">
+            
+                <a href="../webpack/improve_build.html">
+            
+                    
+                    如何提高webpack的构建速度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="../webpack/performance.html">
+            
+                <a href="../webpack/performance.html">
+            
+                    
+                    如何借助webpack来优化前端性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="../webpack/proxy.html">
+            
+                <a href="../webpack/proxy.html">
+            
+                    
+                    webpack proxy工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >设备像素、css像素、设备独立像素、dpr、ppi 之间的区别</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9762;&#x8BD5;&#x5B98;&#xFF1A;&#x8BF4;&#x8BF4;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x3001;css&#x50CF;&#x7D20;&#x3001;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x3001;dpr&#x3001;ppi-&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#xFF1F;">&#x9762;&#x8BD5;&#x5B98;&#xFF1A;&#x8BF4;&#x8BF4;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x3001;css&#x50CF;&#x7D20;&#x3001;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x3001;dpr&#x3001;ppi &#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#xFF1F;</h1>
+<h2 id="&#x4E00;&#x3001;&#x80CC;&#x666F;">&#x4E00;&#x3001;&#x80CC;&#x666F;</h2>
+<p>&#x5728;<code>css</code>&#x4E2D;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4F7F;&#x7528;px&#x4F5C;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x5728;PC&#x6D4F;&#x89C8;&#x5668;&#x4E2D;<code>css</code>&#x7684;1&#x4E2A;&#x50CF;&#x7D20;&#x90FD;&#x662F;&#x5BF9;&#x5E94;&#x7740;&#x7535;&#x8111;&#x5C4F;&#x5E55;&#x7684;1&#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;</p>
+<p>&#x8FD9;&#x4F1A;&#x9020;&#x6210;&#x4E00;&#x79CD;&#x9519;&#x89C9;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x8BA4;&#x4E3A;<code>css</code>&#x4E2D;&#x7684;&#x50CF;&#x7D20;&#x5C31;&#x662F;&#x8BBE;&#x5907;&#x7684;&#x7269;&#x7406;&#x50CF;&#x7D20;</p>
+<p>&#x4F46;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x5374;&#x5E76;&#x975E;&#x5982;&#x6B64;&#xFF0C;<code>css</code>&#x4E2D;&#x7684;&#x50CF;&#x7D20;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x5355;&#x4F4D;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x6216;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;<code>css</code>&#x4E2D;&#x7684;1px&#x6240;&#x4EE3;&#x8868;&#x7684;&#x8BBE;&#x5907;&#x7269;&#x7406;&#x50CF;&#x7D20;&#x662F;&#x4E0D;&#x540C;&#x7684;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x505A;&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x53D1;&#x65F6;&#xFF0C;&#x540C;&#x4E3A;1px&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x663E;&#x793A;&#x6548;&#x679C;&#x5374;&#x6709;&#x5F88;&#x5927;&#x5DEE;&#x5F02;</p>
+<p>&#x8FD9;&#x80CC;&#x540E;&#x5C31;&#x6D89;&#x53CA;&#x4E86;css&#x50CF;&#x7D20;&#x3001;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x3001;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x3001;dpr&#x3001;ppi&#x7684;&#x6982;&#x5FF5;</p>
+<h2 id="&#x4E8C;&#x3001;&#x4ECB;&#x7ECD;">&#x4E8C;&#x3001;&#x4ECB;&#x7ECD;</h2>
+<h3 id="css&#x50CF;&#x7D20;">CSS&#x50CF;&#x7D20;</h3>
+<p>CSS&#x50CF;&#x7D20;&#xFF08;css pixel, px&#xFF09;: &#x9002;&#x7528;&#x4E8E;web&#x7F16;&#x7A0B;&#xFF0C;&#x5728; CSS &#x4E2D;&#x4EE5; px &#x4E3A;&#x540E;&#x7F00;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x5355;&#x4F4D;</p>
+<p>&#x5728; CSS &#x89C4;&#x8303;&#x4E2D;&#xFF0C;&#x957F;&#x5EA6;&#x5355;&#x4F4D;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF0C;&#x7EDD;&#x5BF9;&#x5355;&#x4F4D;&#x4EE5;&#x53CA;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;</p>
+<p>px&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x5355;&#x4F4D;&#xFF0C;&#x76F8;&#x5BF9;&#x7684;&#x662F;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#xFF08;device pixel&#xFF09;</p>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#xFF0C;&#x9875;&#x9762;&#x7F29;&#x653E;&#x6BD4;&#x4E3A;1&#xFF0C;1&#x4E2A;CSS&#x50CF;&#x7D20;&#x7B49;&#x4E8E;1&#x4E2A;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;</p>
+<p><code>CSS</code>&#x50CF;&#x7D20;&#x53C8;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#x7684;&#x76F8;&#x5BF9;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x6BCF;1&#x4E2A; CSS &#x50CF;&#x7D20;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x662F;&#x53EF;&#x4EE5;&#x53D8;&#x5316;&#x7684;&#xFF08;&#x6BD4;&#x5982;&#x8C03;&#x6574;&#x5C4F;&#x5E55;&#x7684;&#x5206;&#x8FA8;&#x7387;&#xFF09;</li>
+<li>&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;&#x4E4B;&#x95F4;&#xFF0C;&#x6BCF;1&#x4E2A; CSS &#x50CF;&#x7D20;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x662F;&#x53EF;&#x4EE5;&#x53D8;&#x5316;&#x7684;&#xFF08;&#x6BD4;&#x5982;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x578B;&#x53F7;&#x7684;&#x624B;&#x673A;&#xFF09;</li>
+</ul>
+<p>&#x5728;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x7F29;&#x653E;&#x64CD;&#x4F5C;&#x4E5F;&#x4F1A; &#x5F15;&#x8D77;<code>css</code>&#x4E2D;<code>px</code>&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5047;&#x8BBE;&#x9875;&#x9762;&#x653E;&#x5927;&#x4E00;&#x500D;&#xFF0C;&#x539F;&#x6765;&#x7684; 1px &#x7684;&#x4E1C;&#x897F;&#x53D8;&#x6210; 2px&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;&#x4E0D;&#x53D8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;1px &#x53D8;&#x5F97;&#x8DDF;&#x539F;&#x6765;&#x7684; 2px &#x7684;&#x957F;&#x5EA6;&#xFF08;&#x957F;&#x5BBD;&#xFF09;&#x4E00;&#x6837;&#x4E86;&#xFF08;&#x5143;&#x7D20;&#x4F1A;&#x5360;&#x636E;&#x66F4;&#x591A;&#x7684;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#xFF09;</p>
+<p>&#x5047;&#x8BBE;&#x539F;&#x6765;&#x9700;&#x8981; 320px &#x624D;&#x80FD;&#x586B;&#x6EE1;&#x7684;&#x5BBD;&#x5EA6;&#x73B0;&#x5728;&#x53EA;&#x9700;&#x8981; 160px</p>
+<p>px&#x4F1A;&#x53D7;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x56E0;&#x7D20;&#x7684;&#x5F71;&#x54CD;&#x800C;&#x53D8;&#x5316;&#xFF1A;</p>
+<ul>
+<li>&#x6BCF;&#x82F1;&#x5BF8;&#x50CF;&#x7D20;&#xFF08;PPI&#xFF09;</li>
+<li>&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#xFF08;DPR&#xFF09;</li>
+</ul>
+<h3 id="&#x8BBE;&#x5907;&#x50CF;&#x7D20;">&#x8BBE;&#x5907;&#x50CF;&#x7D20;</h3>
+<p>&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#xFF08;device pixels&#xFF09;&#xFF0C;&#x53C8;&#x79F0;&#x4E3A;&#x7269;&#x7406;&#x50CF;&#x7D20;</p>
+<p>&#x6307;&#x8BBE;&#x5907;&#x80FD;&#x63A7;&#x5236;&#x663E;&#x793A;&#x7684;&#x6700;&#x5C0F;&#x7269;&#x7406;&#x5355;&#x4F4D;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x6B63;&#x65B9;&#x5F62;&#x533A;&#x5757;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x6807;&#x51C6;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x53EA;&#x662F;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x4E30;&#x5BCC;&#x8272;&#x5F69;&#x7684;&#x4E00;&#x4E2A;&#x201C;&#x70B9;&#x201D;&#x800C;&#x5DF2;</p>
+<p>&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x516C;&#x56ED;&#x91CC;&#x7684;&#x666F;&#x89C2;&#x53D8;&#x8272;&#x5F69;&#x706F;&#xFF0C;&#x4E00;&#x4E2A;&#x5F69;&#x706F;(&#x7269;&#x7406;&#x50CF;&#x7D20;)&#x7531;&#x7EA2;&#x3001;&#x84DD;&#x3001;&#x7EFF;&#x5C0F;&#x706F;&#x7EC4;&#x6210;&#xFF0C;&#x4E09;&#x76CF;&#x5C0F;&#x706F;&#x4E0D;&#x540C;&#x7684;&#x4EAE;&#x5EA6;&#x6DF7;&#x5408;&#x51FA;&#x5404;&#x79CD;&#x8272;&#x5F69;</p>
+<p> <img src="https://static.vue-js.com/cffc6570-91f2-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<p>&#x4ECE;&#x5C4F;&#x5E55;&#x5728;&#x5DE5;&#x5382;&#x751F;&#x4EA7;&#x51FA;&#x7684;&#x90A3;&#x5929;&#x8D77;&#xFF0C;&#x5B83;&#x4E0A;&#x9762;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x70B9;&#x5C31;&#x56FA;&#x5B9A;&#x4E0D;&#x53D8;&#x4E86;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;<code>pt</code></p>
+<h3 id="&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;">&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;</h3>
+<p>&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#xFF08;Device Independent Pixel&#xFF09;&#xFF1A;&#x4E0E;&#x8BBE;&#x5907;&#x65E0;&#x5173;&#x7684;&#x903B;&#x8F91;&#x50CF;&#x7D20;&#xFF0C;&#x4EE3;&#x8868;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x4F7F;&#x7528;&#x7684;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x603B;&#x4F53;&#x6982;&#x5FF5;&#xFF0C;&#x5305;&#x62EC;&#x4E86;CSS&#x50CF;&#x7D20;</p>
+<p>&#x5728;<code>javaScript</code>&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>window.screen.width/ window.screen.height</code> &#x67E5;&#x770B;</p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4F1A;&#x8BF4;&#x201C;&#x7535;&#x8111;&#x5C4F;&#x5E55;&#x5728; 2560x1600&#x5206;&#x8FA8;&#x7387;&#x4E0B;&#x4E0D;&#x9002;&#x5408;&#x73A9;&#x6E38;&#x620F;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x5B83;&#x8C03;&#x4E3A; 1440x900&#x201D;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x201C;&#x5206;&#x8FA8;&#x7387;&#x201D;&#xFF08;&#x975E;&#x4E25;&#x8C28;&#x8BF4;&#x6CD5;&#xFF09;&#x6307;&#x7684;&#x5C31;&#x662F;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;</p>
+<p>&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x91CC;&#x53EF;&#x80FD;&#x5305;&#x542B;1&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;&#x70B9;&#xFF0C;&#x5305;&#x542B;&#x7684;&#x8D8A;&#x591A;&#x5219;&#x5C4F;&#x5E55;&#x770B;&#x8D77;&#x6765;&#x8D8A;&#x6E05;&#x6670;</p>
+<p>&#x81F3;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x51FA;&#x73B0;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x8FD9;&#x79CD;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#x5355;&#x4F4D;&#x6982;&#x5FF5;&#xFF0C;&#x4E0B;&#x9762;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>iPhone 3GS &#x548C; iPhone 4/4s &#x7684;&#x5C3A;&#x5BF8;&#x90FD;&#x662F; 3.5 &#x5BF8;&#xFF0C;&#x4F46; iPhone 3GS &#x7684;&#x5206;&#x8FA8;&#x7387;&#x662F; 320x480&#xFF0C;iPhone 4/4s &#x7684;&#x5206;&#x8FA8;&#x7387;&#x662F; 640x960</p>
+<p>&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;iPhone 3GS &#x6709; 320 &#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;&#xFF0C;iPhone 4/4s &#x6709; 640 &#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6309;&#x7167;&#x771F;&#x5B9E;&#x7684;&#x7269;&#x7406;&#x50CF;&#x7D20;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x6211;&#x4EEC;&#x6309;&#x7167; 320 &#x7269;&#x7406;&#x50CF;&#x7D20;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#xFF0C;&#x5230;&#x4E86; 640 &#x7269;&#x7406;&#x50CF;&#x7D20;&#x7684;&#x624B;&#x673A;&#x4E0A;&#x5C31;&#x4F1A;&#x6709;&#x4E00;&#x534A;&#x7684;&#x7A7A;&#x767D;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#x5355;&#x4F4D;</p>
+<p>&#x6211;&#x4EEC;&#x7EDF;&#x4E00; iPhone 3GS &#x548C; iPhone 4/4s &#x90FD;&#x662F; 320 &#x4E2A;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#xFF0C;&#x53EA;&#x662F;&#x5728; iPhone 3GS &#x4E0A;&#xFF0C;&#x6700;&#x7EC8; 1 &#x4E2A;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#x6362;&#x7B97;&#x6210; 1 &#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;&#xFF0C;&#x5728; iphone 4s &#x4E2D;&#xFF0C;1 &#x4E2A;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#x6700;&#x7EC8;&#x6362;&#x7B97;&#x6210; 2 &#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;</p>
+<p>&#x81F3;&#x4E8E; 1 &#x4E2A;&#x865A;&#x62DF;&#x50CF;&#x7D20;&#x88AB;&#x6362;&#x7B97;&#x6210;&#x51E0;&#x4E2A;&#x7269;&#x7406;&#x50CF;&#x7D20;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x503C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x7684;<code>dpr</code></p>
+<h3 id="dpr">dpr</h3>
+<p>dpr&#xFF08;device pixel ratio&#xFF09;&#xFF0C;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#xFF0C;&#x4EE3;&#x8868;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x5230;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x7684;&#x8F6C;&#x6362;&#x5173;&#x7CFB;&#xFF0C;&#x5728;<code>JavaScript</code>&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>window.devicePixelRatio</code> &#x83B7;&#x53D6;</p>
+<p>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p> <img src="https://static.vue-js.com/dd45e2b0-91f2-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<p>&#x5F53;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#x4E3A;1:1&#x65F6;&#xFF0C;&#x4F7F;&#x7528;1&#xFF08;1&#xD7;1&#xFF09;&#x4E2A;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x663E;&#x793A;1&#x4E2A;CSS&#x50CF;&#x7D20;</p>
+<p>&#x5F53;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#x4E3A;2:1&#x65F6;&#xFF0C;&#x4F7F;&#x7528;4&#xFF08;2&#xD7;2&#xFF09;&#x4E2A;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x663E;&#x793A;1&#x4E2A;CSS&#x50CF;&#x7D20;</p>
+<p>&#x5F53;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#x4E3A;3:1&#x65F6;&#xFF0C;&#x4F7F;&#x7528;9&#xFF08;3&#xD7;3&#xFF09;&#x4E2A;&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x663E;&#x793A;1&#x4E2A;CSS&#x50CF;&#x7D20;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="https://static.vue-js.com/e63cceb0-91f2-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<p>&#x5F53;<code>dpr</code>&#x4E3A;3&#xFF0C;&#x90A3;&#x4E48;<code>1px</code>&#x7684;<code>CSS</code>&#x50CF;&#x7D20;&#x5BBD;&#x5EA6;&#x5BF9;&#x5E94;<code>3px</code>&#x7684;&#x7269;&#x7406;&#x50CF;&#x7D20;&#x7684;&#x5BBD;&#x5EA6;&#xFF0C;1px&#x7684;<code>CSS</code>&#x50CF;&#x7D20;&#x9AD8;&#x5EA6;&#x5BF9;&#x5E94;<code>3px</code>&#x7684;&#x7269;&#x7406;&#x50CF;&#x7D20;&#x9AD8;&#x5EA6;</p>
+<h3 id="ppi">ppi</h3>
+<p>ppi &#xFF08;pixel per inch&#xFF09;&#xFF0C;&#x6BCF;&#x82F1;&#x5BF8;&#x50CF;&#x7D20;&#xFF0C;&#x8868;&#x793A;&#x6BCF;&#x82F1;&#x5BF8;&#x6240;&#x5305;&#x542B;&#x7684;&#x50CF;&#x7D20;&#x70B9;&#x6570;&#x76EE;&#xFF0C;&#x66F4;&#x786E;&#x5207;&#x7684;&#x8BF4;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;&#x50CF;&#x7D20;&#x5BC6;&#x5EA6;&#x3002;&#x6570;&#x503C;&#x8D8A;&#x9AD8;&#xFF0C;&#x8BF4;&#x660E;&#x5C4F;&#x5E55;&#x80FD;&#x4EE5;&#x66F4;&#x9AD8;&#x5BC6;&#x5EA6;&#x663E;&#x793A;&#x56FE;&#x50CF;</p>
+<p>&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p> <img src="https://static.vue-js.com/f734adf0-91f2-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<h2 id="&#x4E09;&#x3001;&#x603B;&#x7ED3;">&#x4E09;&#x3001;&#x603B;&#x7ED3;</h2>
+<p>&#x65E0;&#x7F29;&#x653E;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;1&#x4E2A;CSS&#x50CF;&#x7D20;&#x7B49;&#x4E8E;1&#x4E2A;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;</p>
+<p>&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x7531;&#x5C4F;&#x5E55;&#x751F;&#x4EA7;&#x4E4B;&#x540E;&#x5C31;&#x4E0D;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x800C;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x5355;&#x4F4D;&#x4F1A;&#x53D1;&#x751F;&#x6539;&#x53D8;</p>
+<p>PC&#x7AEF;&#x4E2D;&#xFF0C;1&#x4E2A;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20; = 1&#x4E2A;&#x8BBE;&#x5907;&#x50CF;&#x7D20; &#xFF08;&#x5728;100%&#xFF0C;&#x672A;&#x7F29;&#x653E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF09;</p>
+<p>&#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x4E2D;&#xFF0C;&#x6807;&#x51C6;&#x5C4F;&#x5E55;&#xFF08;160ppi&#xFF09;&#x4E0B; 1&#x4E2A;&#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20; = 1&#x4E2A;&#x8BBE;&#x5907;&#x50CF;&#x7D20;</p>
+<p>&#x8BBE;&#x5907;&#x50CF;&#x7D20;&#x6BD4;&#xFF08;dpr&#xFF09; = &#x8BBE;&#x5907;&#x50CF;&#x7D20; / &#x8BBE;&#x5907;&#x72EC;&#x7ACB;&#x50CF;&#x7D20;</p>
+<p>&#x6BCF;&#x82F1;&#x5BF8;&#x50CF;&#x7D20;&#xFF08;ppi&#xFF09;&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x56FE;&#x50CF;&#x8D8A;&#x6E05;&#x6670;</p>
+<footer class="page-footer"><span class="copyright">2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-06-18 17:03:11
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="css_performance.html" class="navigation navigation-prev " aria-label="Previous page: CSS提高性能的方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="em_px_rem_vh_vw.html" class="navigation navigation-next " aria-label="Next page: em/px/rem/vh/vw区别">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"设备像素、css像素、设备独立像素、dpr、ppi 之间的区别","level":"3.8","depth":1,"next":{"title":"em/px/rem/vh/vw区别","level":"3.9","depth":1,"path":"css/em_px_rem_vh_vw.md","ref":"css/em_px_rem_vh_vw.md","articles":[]},"previous":{"title":"CSS提高性能的方法","level":"3.7","depth":1,"path":"css/css_performance.md","ref":"css/css_performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","splitter","expandable-chapters-small","-copy-code-button","code","tbfed-pagefooter","advanced-emoji","-sharing","sharing-plus","-lunr","-search","search-plus","theme-comscore"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":1},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"dunn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"information.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"面试宝典","language":"zh-hans","gitbook":"*","description":"面试常见问题等"},"file":{"path":"css/dp_px_dpr_ppi.md","mtime":"2021-06-18T09:03:11.475Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-18T10:36:40.915Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
