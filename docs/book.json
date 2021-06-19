@@ -16,7 +16,9 @@
 		"-lunr", 
 		"-search", 
 		"search-plus",
-		"theme-comscore"
+		"theme-comscore",
+		"expandable-chapters-small",
+		"favicon"
     ],
 	"structure" : {
         "readme" : "information.md"
@@ -34,6 +36,10 @@
             "copyright": "2021",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD"
+        },
+		"favicon": {
+            "shortcut": "assets/favicon.ico",
+            "bookmark": "assets/favicon.ico"
         },
 		"sharing": {
 		   "douban": false,
@@ -61,6 +67,6 @@
         }
     },
 	"styles": {
-              "website": "styles/website.css"
+              "website": "assets/styles/website.css"
     }
 }
