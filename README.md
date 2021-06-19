@@ -83,7 +83,8 @@ Tags:
 2.  cd docs
 3.  gitbook install 安装插件
 4.  开始修改文件
-5.  修改完成,git add . ,git commit  git push即可发布
+5.  修改完成,gitbook build 
+6.  正常 git add push即可发布 
 
 #### 使用说明
 
