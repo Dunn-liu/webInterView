@@ -16,7 +16,7 @@ GitBook的安装非常简单。您的系统只需满足这两个要求：
 - NodeJS（推荐使用v4.0.0及以上版本,v10.0.0以下版本）
 - Windows，Linux或Mac OS X
 
-### 安装 Node.js
+#### 安装 Node.js
 
 首先我们需要做的是安装 Node.js,这里不再赘述,推荐使用 nvm 进行node版本管理(自行官网下载安装) 安装前最好先卸载本机已安装node
 常用nvm命令
@@ -28,7 +28,7 @@ nvm uninstall version  // 卸载指定版本node
 nvm use version // 切换使用指定版本node
 ```
 
-### Node.js 镜像配置
+#### Node.js 镜像配置
 
 `Node.js` 安装完成后，我们就可以开始安装 gitbook 了。但是在安装之前，最好先配置一下`Node.js` 源的下载镜像地址。
 
@@ -41,7 +41,7 @@ nvm use version // 切换使用指定版本node
 `npm config set registry http://registry.npm.taobao.org`
 
 
-### 安装 gitbook
+#### 安装 gitbook
 
 执行命令：
 `npm install gitbook-cli -g`
@@ -56,7 +56,7 @@ CLI version: 2.3.2
 GitBook version: 3.2.3
 ```
 
-### 安装其他版本
+#### 安装其他版本
 
 使用`gitbook ls-remote`列出可用于安装的远程版本。
 
