@@ -1,5 +1,5 @@
 {
-    "title": "面试知识分享",
+    "title": "前端程序员的面试知识",
     "description": "面试常见问题等",
     "language": "zh-hans",
     "author": "dunn",
@@ -11,23 +11,23 @@
         "code",
         "tbfed-pagefooter",
         "advanced-emoji",
-		"-sharing", 
-		"sharing-plus",
-		"-lunr", 
-		"-search", 
-		"search-plus",
-		"theme-comscore",
-		"expandable-chapters-small",
-		"favicon"
+        "-sharing",
+        "sharing-plus",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "theme-comscore",
+        "expandable-chapters-small",
+        "favicon"
     ],
-	"structure" : {
-        "readme" : "information.md"
+    "structure": {
+        "readme": "information.md"
     },
     "pluginsConfig": {
         "fontsettings": {
             "theme": "white",
             "family": "sans",
-            "size":  1
+            "size": 1
         },
         "theme-default": {
             "showLevel": false
@@ -37,36 +37,41 @@
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD"
         },
-		"favicon": {
+        "favicon": {
             "shortcut": "assets/favicon.ico",
             "bookmark": "assets/favicon.ico"
         },
-		"sharing": {
-		   "douban": false,
-		   "facebook": false,
-		   "google": false,
-		   "hatenaBookmark": false,
-		   "instapaper": false,
-		   "line": false,
-		   "linkedin": false,
-		   "messenger": false,
-		   "pocket": false,
-		   "qq": true,
-		   "qzone": true,
-		   "stumbleupon": false,
-		   "twitter": false,
-		   "viber": false,
-		   "vk": false,
-		   "weibo": true,
-		   "whatsapp": false,
-		   "all": [
-			   "facebook", "google", "twitter",
-			   "weibo", "instapaper", "linkedin",
-			   "pocket", "stumbleupon"
-		   ]
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "facebook",
+                "google",
+                "twitter",
+                "weibo",
+                "instapaper",
+                "linkedin",
+                "pocket",
+                "stumbleupon"
+            ]
         }
     },
-	"styles": {
-              "website": "assets/styles/website.css"
+    "styles": {
+        "website": "assets/styles/website.css"
     }
 }
